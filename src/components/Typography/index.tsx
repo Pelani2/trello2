@@ -1,4 +1,5 @@
 import React from "react";
+import styled from 'styled-components';
 import "./typography-styles.scss";
 
 const variantClassMap:  Record<string, string> = {
@@ -10,13 +11,32 @@ interface TypographyProps {
     children: React.ReactNode;
 }
 
+const StyledPrimaryTitle = styled.div`
+    font-size: 24px;
+    color: #007bff;
+`;
+
+const StyledDefault = styled.div`
+    font-size: 16px;
+    color: #333;
+`;
+
 const Typography: React.FC<TypographyProps> = ({ variant, children }) => {
-    const className = `typography ${variantClassMap[variant]}`;
+    let StyledTypography;
+
+    switch(variant) {
+        case 'primary-title':
+            StyledTypography = StyledPrimaryTitle;
+            break;
+        default:
+            StyledTypography = StyledDefault;
+            break;
+    }
 
     return (
-        <div className={className}>
+        <StyledTypography>
             {children}
-        </div>
+        </StyledTypography>
     );
 };
 

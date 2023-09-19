@@ -3,6 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import Typography from '../../components/Typography';
 
 const SignupForm = styled.form`
   /* Add styling here */
@@ -43,9 +44,9 @@ const Signup: React.FC = () => {
 
     return (
         <SignupForm onSubmit={handleSubmit(onSubmit)}>
-            <h2>
+            <Typography variant='primary-title'>
                 Sign up
-            </h2>
+            </Typography>
 
             <div className='form-group'>
                 <label htmlFor='email'>
