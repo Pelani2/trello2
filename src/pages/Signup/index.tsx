@@ -8,7 +8,7 @@ const SignupForm = styled.form`
   /* Add styling here */
 `;
 
-const Signup = () => {
+const Signup: React.FC = () => {
     const validationSchema = yup.object().shape({
 
     });
@@ -24,4 +24,12 @@ const Signup = () => {
     const onSubmit = (data: any) => {
         // handle submission
     };
+
+    return (
+        <SignupForm onSubmit={handleSubmit(onSubmit)}>
+
+        </SignupForm>
+    );
 };
+
+export default Signup;
