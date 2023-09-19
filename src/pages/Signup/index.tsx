@@ -8,6 +8,12 @@ const SignupForm = styled.form`
   /* Add styling here */
 `;
 
+interface FormData {
+    name: string;
+    email: string;
+    password: string;
+}
+
 const Signup: React.FC = () => {
     const validationSchema = yup.object().shape({
         name: yup
@@ -31,8 +37,8 @@ const Signup: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
-    const onSubmit = (data: any) => {
-        // handle submission
+    const onSubmit = (data: FormData) => {
+        console.log("Form submitted with the following data: ", data);
     };
 
     return (
