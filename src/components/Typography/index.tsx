@@ -1,8 +1,9 @@
 import React from "react";
-import { StyledPrimaryTitle, StyledDefault } from "./typographyStyles";
+import { StyledPrimaryTitle, StyledDefault, StyledErrorMessge } from "./typographyStyles";
 
 const variantClassMap:  Record<string, string> = {
     "primary-title": "primary-title",
+    "error-message": "error-message",
 };
 
 interface TypographyProps {
@@ -16,6 +17,9 @@ const Typography: React.FC<TypographyProps> = ({ variant, children }) => {
     switch(variant) {
         case 'primary-title':
             StyledTypography = StyledPrimaryTitle;
+            break;
+        case 'error-message':
+            StyledTypography = StyledErrorMessge;
             break;
         default:
             StyledTypography = StyledDefault;
