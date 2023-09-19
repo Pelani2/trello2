@@ -4,6 +4,7 @@ import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styled from 'styled-components';
 import Typography from '../../components/Typography';
+import Label from '../../components/Label';
 
 const SignupForm = styled.form`
   /* Add styling here */
@@ -49,9 +50,9 @@ const Signup: React.FC = () => {
             </Typography>
 
             <div className='form-group'>
-                <label htmlFor='email'>
+                <Label htmlFor='email' variant='form-label'>
                     Email:
-                </label>
+                </Label>
                 <Controller 
                     name='email'
                     control={control}
@@ -64,9 +65,9 @@ const Signup: React.FC = () => {
                     )}
                 />
             </div>
-            <p className='error-message'>
+            <Typography variant='erorr-message'>
                 {errors.email?.message}
-            </p>
+            </Typography>
         </SignupForm>
     );
 };
