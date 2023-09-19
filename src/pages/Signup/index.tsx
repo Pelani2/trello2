@@ -10,7 +10,17 @@ const SignupForm = styled.form`
 
 const Signup: React.FC = () => {
     const validationSchema = yup.object().shape({
-
+        name: yup
+            .string()
+            .required("Name is required"),
+        email: yup
+            .string()
+            .required("Email is required")
+            .email("Invalid email format"),
+        password: yup
+            .string()
+            .required("Password is required")
+            .min(6, "Password must be at least 6 characters long"),
     });
 
     const {
@@ -27,7 +37,29 @@ const Signup: React.FC = () => {
 
     return (
         <SignupForm onSubmit={handleSubmit(onSubmit)}>
+            <h2>
+                Sign up
+            </h2>
 
+            <div className='form-group'>
+                <label htmlFor='email'>
+                    Email:
+                </label>
+                <Controller 
+                    name='email'
+                    control={control}
+                    render={({ field }) => (
+                        <input 
+                            {...field}  
+                            type='text'
+                            placeholder='Email'
+                        />
+                    )}
+                />
+            </div>
+            <p className='error-message'>
+                {errors.email?.message}
+            </p>
         </SignupForm>
     );
 };
