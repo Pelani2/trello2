@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
-import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper } from './signupStyles';
+import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper, LoginPromptLink } from './signupStyles';
 import { FaGoogle } from "react-icons/fa";
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
@@ -200,9 +200,9 @@ const Signup: React.FC = () => {
                 <Typography variant='login-prompt'>
                     Already have an account?
                 </Typography>
-                <Link to="/login">
+                <LoginPromptLink to="/login">
                     Log in
-                </Link>
+                </LoginPromptLink>
             </StyledHaveAccountWrapper>
         </StyledSignupForm>
     );
