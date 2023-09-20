@@ -6,8 +6,10 @@ export const StyledDefault = styled.div`
 `;
 
 export const StyledPrimaryTitle = styled.div`
-    font-size: 24px;
-    color: #007bff;
+    font-size: 36px;
+    font-weight: bold;
+    color: #7B1FA2;
+    text-shadow: 4px 4px 0 #FFFFFF;
 `;
 
 export const StyledErrorMessge = styled.div`
