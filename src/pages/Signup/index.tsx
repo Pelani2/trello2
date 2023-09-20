@@ -3,6 +3,7 @@ import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styled from 'styled-components';
+import { Link } from 'react-router-dom';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
@@ -21,6 +22,9 @@ interface FormData {
 const Signup: React.FC = () => {
     const [isLengthValid, setIsLengthValid] = useState<boolean>(false);
     const [hasSpecialCharacter, setHasSpecialCharacter] = useState<boolean>(false);
+    const [name, setName] = useState("");
+    const [email, setEmail] = useState("");
+    const [password, setPassword] = useState("");
 
     const validationSchema = yup.object().shape({
         name: yup
@@ -48,8 +52,8 @@ const Signup: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
-    const onSubmit = (data: FormData) => {
-        console.log("Form submitted with the following data: ", data);
+    const onSubmit = () => {
+        console.log(`Form submitted with the following data: ${name} ${email} ${password}`);
     };
 
     return (
@@ -73,7 +77,7 @@ const Signup: React.FC = () => {
                             name={field.name}
                             placeholder="Enter your name"
                             value={field.value}
-                            onChange={field.onChange}
+                            onChange={(e) => setName(e.target.value)}
                             onBlur={field.onBlur}
                             variant='form-input'
                         />
@@ -99,7 +103,7 @@ const Signup: React.FC = () => {
                             name={field.name}
                             placeholder="Enter your email"
                             value={field.value}
-                            onChange={field.onChange}
+                            onChange={(e) => setEmail(e.target.value)}
                             onBlur={field.onBlur}
                             variant='form-input'
                         />
@@ -128,7 +132,7 @@ const Signup: React.FC = () => {
                             onChange={(e) => {
                                 setIsLengthValid(e.target.value.length >= 8);
                                 setHasSpecialCharacter(/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(e.target.value));
-                                field.onChange(e);
+                                setPassword(e.target.value);
                             }}
                             onBlur={field.onBlur}
                             variant='form-input'
@@ -161,6 +165,10 @@ const Signup: React.FC = () => {
                 >
                     Get Started
                 </Button>
+
+                <Link to="https://www.google.com/">
+                    Sign up with Google
+                </Link>
             </div>
         </SignupForm>
     );
