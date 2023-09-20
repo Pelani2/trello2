@@ -1,10 +1,11 @@
 import React from "react";
-import { StyledPrimaryTitle, StyledDefault, StyledErrorMessge, StyledSuccessMessage } from "./typographyStyles";
+import { StyledPrimaryTitle, StyledDefault, StyledErrorMessge, StyledSuccessMessage, StyledLoginPrompt } from "./typographyStyles";
 
 const variantClassMap:  Record<string, string> = {
     "primary-title": "primary-title",
     "error-message": "error-message",
     "success-message": "success-message",
+    "login-prompt": "login-prompt",
 };
 
 interface TypographyProps {
@@ -24,6 +25,9 @@ const Typography: React.FC<TypographyProps> = ({ variant, children }) => {
             break;
         case 'success-message':
             StyledTypography = StyledSuccessMessage;
+            break;
+        case 'login-prompt':
+            StyledTypography = StyledLoginPrompt;
             break;
         default:
             StyledTypography = StyledDefault;

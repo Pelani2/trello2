@@ -59,3 +59,11 @@ export const StyledLink = styled(Link)`
         transform: scale(1.1) translateZ(0);
     }
 `;
+
+export const StyledHaveAccountWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    gap: 10px;
+`;

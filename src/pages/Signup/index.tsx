@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
-import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink } from './signupStyles';
+import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper } from './signupStyles';
 import { FaGoogle } from "react-icons/fa";
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
@@ -196,12 +196,14 @@ const Signup: React.FC = () => {
                 </StyledLink>
             </StyledSignupButtonWrapper>
 
-            <div className='have-account-wrapper'>
-                Already have an account?
+            <StyledHaveAccountWrapper>
+                <Typography variant='login-prompt'>
+                    Already have an account?
+                </Typography>
                 <Link to="/login">
                     Log in
                 </Link>
-            </div>
+            </StyledHaveAccountWrapper>
         </StyledSignupForm>
     );
 };
