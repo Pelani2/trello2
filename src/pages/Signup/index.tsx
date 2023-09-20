@@ -52,18 +52,18 @@ const Signup: React.FC = () => {
 
             <div className='form-group'>
                 <Label 
-                    htmlFor='email' 
+                    htmlFor='name' 
                     variant='form-label'
                 >
-                    Email:
+                    Name:
                 </Label>
                 <Controller 
-                    name='email'
+                    name='name'
                     control={control}
                     render={({ field }) => (
                         <Input 
                             name={field.name}
-                            placeholder="Email"
+                            placeholder="Enter your name"
                             value={field.value}
                             onChange={field.onChange}
                             onBlur={field.onBlur}
@@ -73,7 +73,7 @@ const Signup: React.FC = () => {
                 />
             </div>
             <Typography variant='erorr-message'>
-                {errors.email?.message}
+                {errors.name?.message}
             </Typography>
         </SignupForm>
     );
