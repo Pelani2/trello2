@@ -22,6 +22,8 @@ export const StyledSubmitButton = styled.button`
     cursor: pointer;
     transform: perspective(1px) translateZ(0);
     transition: transform 0.3s ease-out;
+    width: 100%;
+    font-size: 1rem;
 
     &:hover {
         transform: scale(1.1) translateZ(0);

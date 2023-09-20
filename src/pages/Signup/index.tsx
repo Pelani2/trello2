@@ -7,6 +7,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
 import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink } from './signupStyles';
+import { FaGoogle } from "react-icons/fa";
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
@@ -191,6 +192,7 @@ const Signup: React.FC = () => {
 
                 <StyledLink to="https://www.google.com/">
                     Sign up with Google
+                    <FaGoogle style={{ marginLeft: "10px", scale: "1.2" }} />
                 </StyledLink>
             </StyledSignupButtonWrapper>
 

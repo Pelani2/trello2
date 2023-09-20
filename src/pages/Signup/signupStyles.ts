@@ -36,24 +36,26 @@ export const StyledSignupButtonWrapper = styled.div`
     align-items: center;
     flex-direction: column;
     gap: 10px;
-    border: 1px solid black;
     width: 400px;
 `;
 
 export const StyledLink = styled(Link)`
-    display: inline-block;
-    padding: 10px 20px;
-    color: #fff;
-    background-color: #007bff;
+    background: linear-gradient(to right, #F44336, #FF9800);
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
     border: none;
-    border-radius: 4px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 1em;
-    transition: background-color 0.3s ease;
+    padding: 10px 20px;
+    cursor: pointer;
+    transform: perspective(1px) translateZ(0);
+    transition: transform 0.3s ease-out;
     width: 100%;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
     &:hover {
-        background-color: #0056b3;
+        transform: scale(1.1) translateZ(0);
     }
 `;
