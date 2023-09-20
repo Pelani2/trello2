@@ -2,19 +2,16 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import styled from 'styled-components';
 import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
+import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper } from './signupStyles';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 
-const SignupForm = styled.form`
-  /* Add styling here */
-`;
 
 interface FormData {
     name: string;
@@ -59,12 +56,12 @@ const Signup: React.FC = () => {
     };
 
     return (
-        <SignupForm onSubmit={handleSubmit(onSubmit)}>
+        <StyledSignupForm onSubmit={handleSubmit(onSubmit)}>
             <Typography variant='primary-title'>
                 Sign up
             </Typography>
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='name' 
                     variant='form-label'
@@ -84,12 +81,12 @@ const Signup: React.FC = () => {
                         />
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             <Typography variant='error-message'>
                 {errors.name?.message}
             </Typography>
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='email' 
                     variant='form-label'
@@ -109,12 +106,12 @@ const Signup: React.FC = () => {
                         />
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             <Typography variant='error-message'>
                 {errors.email?.message}
             </Typography>
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='password' 
                     variant='form-label'
@@ -140,12 +137,12 @@ const Signup: React.FC = () => {
                         />
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             <Typography variant='error-message'>
                 {errors.password?.message}
             </Typography>
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='confirmPassword' 
                     variant='form-label'
@@ -165,12 +162,12 @@ const Signup: React.FC = () => {
                         />
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             <Typography variant='error-message'>
                 {errors.confirmPassword?.message}
             </Typography>
 
-            <div className='password-validation-wrapper'>
+            <StyledPasswordCheckerWrapper>
                 <Typography
                     variant={isLengthValid ? 'success-message' : 'error-message'}
                 >
@@ -182,7 +179,7 @@ const Signup: React.FC = () => {
                 >
                     {hasSpecialCharacter ? 'Password contains at least one special character' : 'Password must contain at least one special character.'}
                 </Typography>
-            </div>
+            </StyledPasswordCheckerWrapper>
 
             <div className='signup-button-wrapper'>
                 <Button
@@ -203,7 +200,7 @@ const Signup: React.FC = () => {
                     Log in
                 </Link>
             </div>
-        </SignupForm>
+        </StyledSignupForm>
     );
 };
 
