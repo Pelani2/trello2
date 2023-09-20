@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -18,6 +18,9 @@ interface FormData {
 }
 
 const Signup: React.FC = () => {
+    const [isLengthValid, setIsLengthValid] = useState<boolean>(false);
+    const [hasSpecialCharacter, setHasSpecialCharacter] = useState<boolean>(false);
+
     const validationSchema = yup.object().shape({
         name: yup
             .string()
@@ -121,16 +124,34 @@ const Signup: React.FC = () => {
                             name={field.name}
                             placeholder="Enter your password"
                             value={field.value}
-                            onChange={field.onChange}
+                            onChange={(e) => {
+                                setIsLengthValid(e.target.value.length >= 8);
+                                setHasSpecialCharacter(/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(e.target.value));
+                                field.onChange(e);
+                            }}
                             onBlur={field.onBlur}
                             variant='form-input'
                         />
                     )}
                 />
             </div>
-            <Typography variant='success-message'>
+            <Typography variant='error-message'>
                 {errors.password?.message}
             </Typography>
+
+            <div className='password-validation-wrapper'>
+                <Typography
+                    variant={isLengthValid ? 'success-message' : 'error-message'}
+                >
+                    {isLengthValid ? 'Password is at least 8 characters long.' : 'Password must be at least 8 characters long'}
+                </Typography>
+
+                <Typography
+                    variant={hasSpecialCharacter ? 'success-message' : 'error-message'}
+                >
+                    {hasSpecialCharacter ? 'Password contains at least one special character' : 'Password must contain at least one special character.'}
+                </Typography>
+            </div>
         </SignupForm>
     );
 };
