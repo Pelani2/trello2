@@ -73,7 +73,59 @@ const Signup: React.FC = () => {
                 />
             </div>
             <Typography variant='erorr-message'>
-                {errors.name?.message}
+                {errors.name?.message} error
+            </Typography>
+
+            <div className='form-group'>
+                <Label 
+                    htmlFor='email' 
+                    variant='form-label'
+                >
+                    Email:
+                </Label>
+                <Controller 
+                    name='email'
+                    control={control}
+                    render={({ field }) => (
+                        <Input 
+                            name={field.name}
+                            placeholder="Enter your email"
+                            value={field.value}
+                            onChange={field.onChange}
+                            onBlur={field.onBlur}
+                            variant='form-input'
+                        />
+                    )}
+                />
+            </div>
+            <Typography variant='erorr-message'>
+                {errors.email?.message} error
+            </Typography>
+
+            <div className='form-group'>
+                <Label 
+                    htmlFor='password' 
+                    variant='form-label'
+                >
+                    Password:
+                </Label>
+                <Controller 
+                    name='password'
+                    control={control}
+                    render={({ field }) => (
+                        <Input 
+                            name={field.name}
+                            placeholder="Enter your password"
+                            value={field.value}
+                            onChange={field.onChange}
+                            onBlur={field.onBlur}
+                            variant='form-input'
+                        />
+                    )}
+                />
+            </div>
+            <Typography variant='erorr-message'>
+                {errors.password?.message} error
             </Typography>
         </SignupForm>
     );
