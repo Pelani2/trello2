@@ -12,6 +12,7 @@ interface InputProps {
     value: string;
     onChange: (e: React.ChangeEvent<HTMLInputElement>) => void;
     onBlur: (e: React.FocusEvent<HTMLInputElement>) => void;
+    type: string;
 }
 
 const Input: React.FC<InputProps> = ({
@@ -21,6 +22,7 @@ const Input: React.FC<InputProps> = ({
     onChange,
     onBlur,
     variant,
+    type,
 }) => {
     let StyledInput;
 
@@ -40,6 +42,7 @@ const Input: React.FC<InputProps> = ({
             value={value}
             onChange={onChange}
             onBlur={onBlur}
+            type={type}
         />
     );
 };

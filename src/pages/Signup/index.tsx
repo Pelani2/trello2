@@ -22,9 +22,6 @@ interface FormData {
 const Signup: React.FC = () => {
     const [isLengthValid, setIsLengthValid] = useState<boolean>(false);
     const [hasSpecialCharacter, setHasSpecialCharacter] = useState<boolean>(false);
-    const [name, setName] = useState("");
-    const [email, setEmail] = useState("");
-    const [password, setPassword] = useState("");
 
     const validationSchema = yup.object().shape({
         name: yup
@@ -52,8 +49,8 @@ const Signup: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
-    const onSubmit = () => {
-        console.log(`Form submitted with the following data: ${name} ${email} ${password}`);
+    const onSubmit = (data: FormData) => {
+        console.log(`Form submitted with the following data: ${data}`);
     };
 
     return (
@@ -72,14 +69,13 @@ const Signup: React.FC = () => {
                 <Controller 
                     name='name'
                     control={control}
+                    defaultValue=''
                     render={({ field }) => (
                         <Input 
-                            name={field.name}
-                            placeholder="Enter your name"
-                            value={field.value}
-                            onChange={(e) => setName(e.target.value)}
-                            onBlur={field.onBlur}
+                            {...field}
+                            placeholder='Enter your name'
                             variant='form-input'
+                            type='text'
                         />
                     )}
                 />
@@ -98,14 +94,13 @@ const Signup: React.FC = () => {
                 <Controller 
                     name='email'
                     control={control}
+                    defaultValue=''
                     render={({ field }) => (
                         <Input 
-                            name={field.name}
-                            placeholder="Enter your email"
-                            value={field.value}
-                            onChange={(e) => setEmail(e.target.value)}
-                            onBlur={field.onBlur}
+                            {...field}
+                            placeholder='Enter your email'
                             variant='form-input'
+                            type='email'
                         />
                     )}
                 />
@@ -124,18 +119,19 @@ const Signup: React.FC = () => {
                 <Controller 
                     name='password'
                     control={control}
+                    defaultValue=''
                     render={({ field }) => (
                         <Input 
-                            name={field.name}
+                            {...field}
                             placeholder="Enter your password"
                             value={field.value}
                             onChange={(e) => {
+                                field.onChange(e);
                                 setIsLengthValid(e.target.value.length >= 8);
                                 setHasSpecialCharacter(/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(e.target.value));
-                                setPassword(e.target.value);
                             }}
-                            onBlur={field.onBlur}
                             variant='form-input'
+                            type='password'
                         />
                     )}
                 />
