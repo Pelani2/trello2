@@ -29,7 +29,11 @@ const Signup: React.FC = () => {
         password: yup
             .string()
             .required("Password is required")
-            .min(6, "Password must be at least 6 characters long"),
+            .min(8, "Password must be at least 8 characters long")
+            .matches(
+                /^(?=.*[!@#$%^&*()_+{}[\]:;<>,.?~\\-]).*$/,
+                'Password must contain at least one special character'
+            ),
     });
 
     const {
@@ -124,7 +128,7 @@ const Signup: React.FC = () => {
                     )}
                 />
             </div>
-            <Typography variant='error-message'>
+            <Typography variant='success-message'>
                 {errors.password?.message}
             </Typography>
         </SignupForm>
