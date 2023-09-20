@@ -6,7 +6,7 @@ import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
-import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper } from './signupStyles';
+import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink } from './signupStyles';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
@@ -181,7 +181,7 @@ const Signup: React.FC = () => {
                 </Typography>
             </StyledPasswordCheckerWrapper>
 
-            <div className='signup-button-wrapper'>
+            <StyledSignupButtonWrapper>
                 <Button
                     type='submit'
                     variant='submit-button'
@@ -189,10 +189,10 @@ const Signup: React.FC = () => {
                     Get Started
                 </Button>
 
-                <Link to="https://www.google.com/">
+                <StyledLink to="https://www.google.com/">
                     Sign up with Google
-                </Link>
-            </div>
+                </StyledLink>
+            </StyledSignupButtonWrapper>
 
             <div className='have-account-wrapper'>
                 Already have an account?

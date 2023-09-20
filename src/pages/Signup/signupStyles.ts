@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { Link } from "react-router-dom";
 
 export const StyledSignupForm = styled.form`
     display: flex;
@@ -26,4 +27,33 @@ export const StyledPasswordCheckerWrapper = styled.div`
     align-items: flex-start;
     flex-direction: column;
     gap: 10px;
+    margin-bottom: 20px;
+`;
+
+export const StyledSignupButtonWrapper = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 10px;
+    border: 1px solid black;
+    width: 400px;
+`;
+
+export const StyledLink = styled(Link)`
+    display: inline-block;
+    padding: 10px 20px;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 4px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 1em;
+    transition: background-color 0.3s ease;
+    width: 100%;
+
+    &:hover {
+        background-color: #0056b3;
+    }
 `;
