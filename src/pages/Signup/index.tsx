@@ -33,7 +33,11 @@ const Signup: React.FC = () => {
             .email("Invalid email format"),
         password: yup
             .string()
-            .required("Password is required")
+            .required("Password is required"),
+        confirmPassword: yup
+            .string()
+            .required("Confirm password is required")
+            .oneOf([yup.ref("password")], "Passwords must match"),
     });
 
     const {
@@ -133,6 +137,31 @@ const Signup: React.FC = () => {
             </div>
             <Typography variant='error-message'>
                 {errors.password?.message}
+            </Typography>
+
+            <div className='form-group'>
+                <Label 
+                    htmlFor='confirmPassword' 
+                    variant='form-label'
+                >
+                    Confirm Password:
+                </Label>
+                <Controller 
+                    name='confirmPassword'
+                    control={control}
+                    defaultValue=''
+                    render={({ field }) => (
+                        <Input 
+                            {...field}
+                            placeholder="Confirm your password"
+                            variant='form-input'
+                            type='password'
+                        />
+                    )}
+                />
+            </div>
+            <Typography variant='error-message'>
+                {errors.confirmPassword?.message}
             </Typography>
 
             <div className='password-validation-wrapper'>
