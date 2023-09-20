@@ -17,6 +17,9 @@ export const StyledErrorMessge = styled.div`
     font-weight: bold;
     box-shadow: 0 0 10px #F44336;
     transition: box-shadow 0.5s ease-in-out;
+    text-align: left;
+    width: 390px;
+    margin-bottom: 10px;
 
     &:hover {
         box-shadow: 0 0 10px white;
@@ -28,9 +31,15 @@ export const StyledSuccessMessage = styled.div`
     font-weight: bold;
     box-shadow: 0 0 10px #4caf50;
     transition: box-shadow 0.5s ease-in-out;
+    margin-bottom: 10px;
 
-    &: {
+    &:hover {
         box-shadow: 0 0 10px white;
+    }
+
+    &::after {
+        content: ' ✅';
+        margin-left: 10px;
     }
 `;
 
