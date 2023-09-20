@@ -18,3 +18,21 @@ export const StyledFormInput = styled.input`
         border-color: #007bff;
     }
 `;
+
+export const StyledDefaultInput = styled.input`
+    width: 100%;
+    padding: 8px;
+    border: 1px solid #ccc;
+    border-radius: 3px;
+    font-size: 14px;
+    outline: none;
+
+    ::placeholder {
+        color: #999;
+    }
+
+    &:hover,
+    &:focus {
+        border-color: #007bff;
+    }
+`;

@@ -5,6 +5,7 @@ import * as yup from 'yup';
 import styled from 'styled-components';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
+import Input from '../../components/Input';
 
 const SignupForm = styled.form`
   /* Add styling here */
@@ -50,17 +51,23 @@ const Signup: React.FC = () => {
             </Typography>
 
             <div className='form-group'>
-                <Label htmlFor='email' variant='form-label'>
+                <Label 
+                    htmlFor='email' 
+                    variant='form-label'
+                >
                     Email:
                 </Label>
                 <Controller 
                     name='email'
                     control={control}
                     render={({ field }) => (
-                        <input 
-                            {...field}  
-                            type='text'
-                            placeholder='Email'
+                        <Input 
+                            name={field.name}
+                            placeholder="Email"
+                            value={field.value}
+                            onChange={field.onChange}
+                            onBlur={field.onBlur}
+                            variant='form-input'
                         />
                     )}
                 />
