@@ -72,8 +72,8 @@ const Signup: React.FC = () => {
                     )}
                 />
             </div>
-            <Typography variant='erorr-message'>
-                {errors.name?.message} error
+            <Typography variant='error-message'>
+                {errors.name?.message}
             </Typography>
 
             <div className='form-group'>
@@ -98,8 +98,8 @@ const Signup: React.FC = () => {
                     )}
                 />
             </div>
-            <Typography variant='erorr-message'>
-                {errors.email?.message} error
+            <Typography variant='error-message'>
+                {errors.email?.message}
             </Typography>
 
             <div className='form-group'>
@@ -124,8 +124,8 @@ const Signup: React.FC = () => {
                     )}
                 />
             </div>
-            <Typography variant='erorr-message'>
-                {errors.password?.message} error
+            <Typography variant='error-message'>
+                {errors.password?.message}
             </Typography>
         </SignupForm>
     );
