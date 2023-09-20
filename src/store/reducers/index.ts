@@ -1,4 +1,4 @@
-import { SET_IS_LENGTH_VALID, SET_HAS_SPECIAL_CHARACTER } from "../actions";
+import { SET_IS_LENGTH_VALID, SET_HAS_SPECIAL_CHARACTER } from "../actions/passwordValidationSlice";
 
 const initialState = {
     isLengthValid: false,
