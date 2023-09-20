@@ -1,9 +1,12 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
 import styled from 'styled-components';
 import { Link } from 'react-router-dom';
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../store/store';
+import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
@@ -20,8 +23,9 @@ interface FormData {
 }
 
 const Signup: React.FC = () => {
-    const [isLengthValid, setIsLengthValid] = useState<boolean>(false);
-    const [hasSpecialCharacter, setHasSpecialCharacter] = useState<boolean>(false);
+    const dispatch = useDispatch();
+    const isLengthValid = useSelector((state: RootState) => state.passwordValidation.isLengthValid);
+    const hasSpecialCharacter = useSelector((state: RootState) => state.passwordValidation.hasSpecialCharacter);
 
     const validationSchema = yup.object().shape({
         name: yup
@@ -128,8 +132,8 @@ const Signup: React.FC = () => {
                             value={field.value}
                             onChange={(e) => {
                                 field.onChange(e);
-                                setIsLengthValid(e.target.value.length >= 8);
-                                setHasSpecialCharacter(/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(e.target.value));
+                                dispatch(setIsLengthValid(e.target.value.length >= 8));
+                                dispatch(setHasSpecialCharacter(/[!@#$%^&*()_+{}[\]:;<>,.?~\\-]/.test(e.target.value)));
                             }}
                             variant='form-input'
                             type='password'
