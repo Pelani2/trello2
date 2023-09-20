@@ -49,7 +49,10 @@ const Signup: React.FC = () => {
     });
 
     const onSubmit = (data: FormData) => {
-        console.log(`Form submitted with the following data: ${data}`);
+        console.log(`Form submitted with the following data: \n\nName: ${data.name} 
+        
+        \nEmail: ${data.email} 
+        \nPassword: ${data.password}`);
     };
 
     return (
