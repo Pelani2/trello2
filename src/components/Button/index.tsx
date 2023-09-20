@@ -24,9 +24,7 @@ const Button: React.FC<ButtonProps> = ({ variant, children, type }) => {
     }
 
     return (
-        <StyledButton
-            type={type}
-        >
+        <StyledButton type={type}>
             {children}
         </StyledButton>
     );

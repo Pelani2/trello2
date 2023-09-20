@@ -6,6 +6,7 @@ import styled from 'styled-components';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
+import Button from '../../components/Button';
 
 const SignupForm = styled.form`
   /* Add styling here */
@@ -151,6 +152,15 @@ const Signup: React.FC = () => {
                 >
                     {hasSpecialCharacter ? 'Password contains at least one special character' : 'Password must contain at least one special character.'}
                 </Typography>
+            </div>
+
+            <div className='signup-button-wrapper'>
+                <Button
+                    type='submit'
+                    variant='submit-button'
+                >
+                    Get Started
+                </Button>
             </div>
         </SignupForm>
     );
