@@ -50,7 +50,6 @@ const Signup: React.FC = () => {
 
     const onSubmit = (data: FormData) => {
         console.log(`Form submitted with the following data: \n\nName: ${data.name} 
-        
         \nEmail: ${data.email} 
         \nPassword: ${data.password}`);
     };
@@ -191,6 +190,13 @@ const Signup: React.FC = () => {
 
                 <Link to="https://www.google.com/">
                     Sign up with Google
+                </Link>
+            </div>
+
+            <div className='have-account-wrapper'>
+                Already have an account?
+                <Link to="/login">
+                    Log in
                 </Link>
             </div>
         </SignupForm>
