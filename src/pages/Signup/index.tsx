@@ -45,7 +45,7 @@ const Signup: React.FC = () => {
         handleSubmit, 
         control, 
         formState: { errors },
-    } = useForm({
+    } = useForm<FormData>({
         resolver: yupResolver(validationSchema),
     });
 

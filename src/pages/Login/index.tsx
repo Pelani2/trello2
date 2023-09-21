@@ -16,6 +16,7 @@ interface FormData {
 const validationSchema = yup.object().shape({
     email: yup.string().required("Email is required").email("Invalid email format"),
     password: yup.string().required("Password is required"),
+    rememberMe: yup.boolean(),
 });
 
 const Login: React.FC = () => {
@@ -28,6 +29,10 @@ const Login: React.FC = () => {
     });
 
     const [rememberMe, setRememberMe] = useState(false);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        setRememberMe(e.target.checked);
+    }
 
     const onSubmit = (data: FormData) => {
         console.log(`Form submitted with the following data: 
@@ -103,6 +108,34 @@ const Login: React.FC = () => {
                     {errors.password.message}
                 </Typography>
             )}
+
+            <div className='form-group'>
+                <Controller 
+                    name='rememberMe'
+                    control={control}
+                    defaultValue={false}
+                    render={({ field }) => (
+                        <>
+                            <Input
+                                {...field}
+                                variant=''
+                                name='rememberMe'
+                                placeholder=''
+                                value=''
+                                onChange={handleInputChange}
+                                type='checkbox'
+                                checked={rememberMe}
+                            />
+                            <Label 
+                                htmlFor='rememberMe' 
+                                variant=''
+                            >
+                                Remember for 30 days
+                            </Label>
+                        </>
+                    )}
+                />
+            </div>
         </form>
     );
 };
