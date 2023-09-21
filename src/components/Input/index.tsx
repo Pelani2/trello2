@@ -3,6 +3,7 @@ import { StyledFormInput, StyledDefaultInput } from "./inputStyles";
 
 const variantClassMap: Record<string, string> = {
     "form-input": "form-input",
+    "checkbox-input": "checkbox-input",
 };
 
 interface InputProps {

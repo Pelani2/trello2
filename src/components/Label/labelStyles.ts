@@ -18,6 +18,4 @@ export const StyledDefaultLabel = styled.label`
 export const StyledRememberLabel = styled.label`
     color: #333;
     font-size: 13px;
-    margin-left: 10px;
-    vertical-align: middle;
 `;
