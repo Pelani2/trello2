@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
 import { RootState } from '../../store/store';
-import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../styles/loginSignupStyles';
+import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink, StyledRememberWrapper } from '../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
 
 interface FormData {
@@ -123,7 +123,7 @@ const Login: React.FC = () => {
                     control={control}
                     defaultValue={false}
                     render={({ field }) => (
-                        <div className='remember-wrapper'>
+                        <StyledRememberWrapper>
                             <Input
                                 {...field}
                                 variant=''
@@ -136,11 +136,12 @@ const Login: React.FC = () => {
                             />
                             <Label 
                                 htmlFor='rememberMe' 
-                                variant=''
+                                variant='remember-label'
                             >
                                 Remember for 30 days
                             </Label>
-                        </div>
+                            
+                        </StyledRememberWrapper>
                     )}
                 />
 

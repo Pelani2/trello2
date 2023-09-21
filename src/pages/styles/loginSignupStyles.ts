@@ -82,3 +82,9 @@ export const StyledPromptLink = styled(Link)`
         box-shadow: inset 0 3px #7B1FA2;
     }
 `;
+
+export const StyledRememberWrapper = styled.div`
+    display: flex;
+    border; 1px solid black;
+    background-color: red;
+`;

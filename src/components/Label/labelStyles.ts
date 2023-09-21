@@ -14,3 +14,10 @@ export const StyledDefaultLabel = styled.label`
     padding: 8px;
     border: 1px solid #ccc; 
 `;
+
+export const StyledRememberLabel = styled.label`
+    color: #333;
+    font-size: 13px;
+    margin-left: 10px;
+    vertical-align: middle;
+`;

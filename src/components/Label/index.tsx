@@ -1,8 +1,9 @@
 import React from "react";
-import { StyledFormLabel, StyledDefaultLabel } from "./labelStyles";
+import { StyledFormLabel, StyledDefaultLabel, StyledRememberLabel } from "./labelStyles";
 
 const variantClassMap: Record<string, string> = {
     "form-label": "form-label",
+    "remember-label": "remember-label",
 };
 
 interface LabelProps {
@@ -17,6 +18,9 @@ const Label: React.FC<LabelProps> = ({ htmlFor, variant, children }) => {
     switch(variant) {
         case "form-label":
             StyledLabel = StyledFormLabel;
+            break;
+        case "remember-label":
+            StyledLabel = StyledRememberLabel;
             break;
         default:
             StyledLabel = StyledDefaultLabel;
