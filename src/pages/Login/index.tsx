@@ -11,6 +11,8 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
 import { RootState } from '../../store/store';
+import { StyledSignupForm, StyledFormGroup, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper, LoginPromptLink } from '../Signup/signupStyles';
+import { FaGoogle } from "react-icons/fa";
 
 interface FormData {
     email: string;
@@ -56,8 +58,8 @@ const Login: React.FC = () => {
     };
 
     return (
-        <form onSubmit={handleSubmit(onSubmit)}>
-            <div className='form-group'>
+        <StyledSignupForm onSubmit={handleSubmit(onSubmit)}>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='email' 
                     variant='form-label'
@@ -79,14 +81,14 @@ const Login: React.FC = () => {
                         </>
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             {errors.email && (
                 <Typography variant='error-message'>
                     {errors.email.message}
                 </Typography>
             )}
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Label 
                     htmlFor='password' 
                     variant='form-label'
@@ -108,14 +110,14 @@ const Login: React.FC = () => {
                         </>
                     )}
                 />
-            </div>
+            </StyledFormGroup>
             {errors.password && (
                 <Typography variant='error-message'>
                     {errors.password.message}
                 </Typography>
             )}
 
-            <div className='form-group'>
+            <StyledFormGroup>
                 <Controller 
                     name='rememberMe'
                     control={control}
@@ -145,26 +147,27 @@ const Login: React.FC = () => {
                 <Link to="/passwordreset">
                     Forgot password
                 </Link>
-            </div>
+            </StyledFormGroup>
 
-            <div className='button-wrapper'>
+            <StyledSignupButtonWrapper>
                 <Button variant='submit-button'>
                     Sign in
                 </Button>
-                <Link to="">
+                <StyledLink to="">
                     Sign in with Google
-                </Link>
-            </div>
+                    <FaGoogle style={{ marginLeft: "10px", scale: "1.2" }} />
+                </StyledLink>
+            </StyledSignupButtonWrapper>
 
-            <div className='dont-have-account-wrapper'>
+            <StyledHaveAccountWrapper>
                 <Typography variant='login-prompt'>
                     Dont have an account? 
-                    <Link to="">
+                    <LoginPromptLink to="">
                         Sign Up
-                    </Link>
+                    </LoginPromptLink>
                 </Typography>
-            </div>
-        </form>
+            </StyledHaveAccountWrapper>
+        </StyledSignupForm>
     );
 };
 
