@@ -51,13 +51,47 @@ const Login: React.FC = () => {
                                 <Input 
                                     {...field}
                                     type='email'
-                                    placeholder='email'
+                                    placeholder='Enter your email'
                                     variant='form-input'
                                 />
                             </>
                         )}
                     />
                 </div>
+                {errors.email && (
+                    <Typography variant='error-message'>
+                        {errors.email.message}
+                    </Typography>
+                )}
+
+                <div className='form-group'>
+                    <Label 
+                        htmlFor='password' 
+                        variant='form-label'
+                    >
+                        Password: 
+                    </Label>
+                    <Controller 
+                        name='password'
+                        control={control}
+                        defaultValue=''
+                        render={({ field }) => (
+                            <>
+                                <Input 
+                                    {...field}
+                                    type='password'
+                                    placeholder='Enter your password'
+                                    variant='form-input'
+                                />
+                            </>
+                        )}
+                    />
+                </div>
+                {errors.password && (
+                    <Typography variant='error-message'>
+                        {errors.password.message}
+                    </Typography>
+                )}
             </form>
         </div>
     );
