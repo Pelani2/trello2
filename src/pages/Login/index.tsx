@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
@@ -7,6 +7,10 @@ import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Typography from '../../components/Typography';
+import { useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
+import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
+import { RootState } from '../../store/store';
 
 interface FormData {
     email: string;
@@ -21,6 +25,13 @@ const validationSchema = yup.object().shape({
 });
 
 const Login: React.FC = () => {
+    const dispatch = useDispatch();
+    const rememberMe = useSelector((state: RootState) => state.rememberPassword.rememberMe);
+
+    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+        dispatch(setRememberMe(e.target.checked));
+    }
+
     const {
         handleSubmit, 
         control,
@@ -28,12 +39,6 @@ const Login: React.FC = () => {
     } = useForm<FormData>({
         resolver: yupResolver(validationSchema),
     });
-
-    const [rememberMe, setRememberMe] = useState(false);
-
-    const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setRememberMe(e.target.checked);
-    }
 
     const onSubmit = (data: FormData) => {
         console.log(`Form submitted with the following data: 
