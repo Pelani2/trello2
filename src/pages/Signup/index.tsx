@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
-import { StyledSignupForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper, LoginPromptLink } from './signupStyles';
+import { StyledForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
@@ -57,7 +57,7 @@ const Signup: React.FC = () => {
     };
 
     return (
-        <StyledSignupForm onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <Typography variant='primary-title'>
                 Sign up
             </Typography>
@@ -182,7 +182,7 @@ const Signup: React.FC = () => {
                 </Typography>
             </StyledPasswordCheckerWrapper>
 
-            <StyledSignupButtonWrapper>
+            <StyledButtonWrapper>
                 <Button
                     type='submit'
                     variant='submit-button'
@@ -194,17 +194,17 @@ const Signup: React.FC = () => {
                     Sign up with Google
                     <FaGoogle style={{ marginLeft: "10px", scale: "1.2" }} />
                 </StyledLink>
-            </StyledSignupButtonWrapper>
+            </StyledButtonWrapper>
 
-            <StyledHaveAccountWrapper>
+            <StyledAccountPromptWrapper>
                 <Typography variant='login-prompt'>
                     Already have an account?
                 </Typography>
-                <LoginPromptLink to="/login">
+                <StyledPromptLink to="/login">
                     Log in
-                </LoginPromptLink>
-            </StyledHaveAccountWrapper>
-        </StyledSignupForm>
+                </StyledPromptLink>
+            </StyledAccountPromptWrapper>
+        </StyledForm>
     );
 };
 

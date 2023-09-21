@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
 import { RootState } from '../../store/store';
-import { StyledSignupForm, StyledFormGroup, StyledSignupButtonWrapper, StyledLink, StyledHaveAccountWrapper, LoginPromptLink } from '../Signup/signupStyles';
+import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
 
 interface FormData {
@@ -58,7 +58,7 @@ const Login: React.FC = () => {
     };
 
     return (
-        <StyledSignupForm onSubmit={handleSubmit(onSubmit)}>
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <StyledFormGroup>
                 <Label 
                     htmlFor='email' 
@@ -149,7 +149,7 @@ const Login: React.FC = () => {
                 </Link>
             </StyledFormGroup>
 
-            <StyledSignupButtonWrapper>
+            <StyledButtonWrapper>
                 <Button variant='submit-button'>
                     Sign in
                 </Button>
@@ -157,17 +157,17 @@ const Login: React.FC = () => {
                     Sign in with Google
                     <FaGoogle style={{ marginLeft: "10px", scale: "1.2" }} />
                 </StyledLink>
-            </StyledSignupButtonWrapper>
+            </StyledButtonWrapper>
 
-            <StyledHaveAccountWrapper>
+            <StyledAccountPromptWrapper>
                 <Typography variant='login-prompt'>
                     Dont have an account? 
-                    <LoginPromptLink to="">
+                    <StyledPromptLink to="/signup">
                         Sign Up
-                    </LoginPromptLink>
+                    </StyledPromptLink>
                 </Typography>
-            </StyledHaveAccountWrapper>
-        </StyledSignupForm>
+            </StyledAccountPromptWrapper>
+        </StyledForm>
     );
 };
 
