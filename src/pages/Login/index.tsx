@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
+import { Link } from 'react-router-dom';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -115,7 +116,7 @@ const Login: React.FC = () => {
                     control={control}
                     defaultValue={false}
                     render={({ field }) => (
-                        <>
+                        <div className='remember-wrapper'>
                             <Input
                                 {...field}
                                 variant=''
@@ -132,9 +133,31 @@ const Login: React.FC = () => {
                             >
                                 Remember for 30 days
                             </Label>
-                        </>
+                        </div>
                     )}
                 />
+
+                <Link to="/passwordreset">
+                    Forgot password
+                </Link>
+            </div>
+
+            <div className='button-wrapper'>
+                <Button variant='submit-button'>
+                    Sign in
+                </Button>
+                <Link to="">
+                    Sign in with Google
+                </Link>
+            </div>
+
+            <div className='dont-have-account-wrapper'>
+                <Typography variant='login-prompt'>
+                    Dont have an account? 
+                    <Link to="">
+                        Sign Up
+                    </Link>
+                </Typography>
             </div>
         </form>
     );
