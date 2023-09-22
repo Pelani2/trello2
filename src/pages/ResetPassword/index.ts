@@ -5,6 +5,10 @@ import * as yup from 'yup';
 import { passwordResetStart, passwordResetFailure, passwordResetSuccess } from "../../store/actions/passwordResetSlice";
 import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
+import Typography from "../../components/Typography";
+import Label from "../../components/Label";
+import Input from "../../components/Input";
+import Button from "../../components/Button";
 
 interface FormInputs {
     email: string;
@@ -24,4 +28,19 @@ const ResetPassword: React.FC = () => {
     } = useForm<FormInputs>({
         resolver: yupResolver(validationSchema),
     });
+
+    const onSubmit = async(data: FormInputs) => {
+        dispatch(passwordResetStart());
+
+        try {
+            const response = await axios.post('', data);
+            if (response.data.success) {
+                dispatch(passwordResetSuccess());
+            } else {
+                dispatch(passwordResetFailure(response.data.message));
+            }
+        } catch (error) {
+            dispatch(passwordResetFailure(error.message));
+        }
+    }
 };
