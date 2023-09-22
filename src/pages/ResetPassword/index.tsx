@@ -9,7 +9,7 @@ import Typography from "../../components/Typography";
 import Label from "../../components/Label";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
-import { error } from "console";
+import { StyledForm, StyledFormGroup, StyledButtonWrapper } from "../../styles/loginSignupStyles";
 
 interface FormInputs {
     email: string;
@@ -48,41 +48,50 @@ const ResetPassword: React.FC = () => {
             }
         }
     };
-
+    // do layout
     return (
-        <div>
-            <Typography variant="">
-                Reset Password
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <Typography variant="primary-title">
+                Forgot password?
             </Typography>
-            <form onSubmit={handleSubmit(onSubmit)}>
-                <Label htmlFor="email" variant="">
-                    Email:
-                </Label>
-                <Controller 
-                    name='email'
-                    control={control}
-                    defaultValue=''
-                    render={({ field }) => (
-                        <Input 
-                            {...field}
-                            placeholder='Enter your email'
-                            variant='form-input'
-                            type='email'
-                        />
-                    )}
-                />
-                {errors.email && (
-                    <Typography variant="">
-                        {errors.email.message}
-                    </Typography>
-                )}
+            <Typography variant="">
+                {"No worries we'll send you reset instructions"}
+            </Typography>
+            <StyledFormGroup>
+                <Label 
+                    htmlFor="email" 
+                    variant="form-label"
+                >
+                        Email:
+                    </Label>
+                    <Controller 
+                        name='email'
+                        control={control}
+                        defaultValue=''
+                        render={({ field }) => (
+                            <Input 
+                                {...field}
+                                placeholder='Enter your email'
+                                variant='form-input'
+                                type='email'
+                            />
+                        )}
+                    />
+            </StyledFormGroup>  
+            {errors.email && (
+                <Typography variant="">
+                    {errors.email.message}
+                </Typography>
+            )}
+            <StyledButtonWrapper>
                 <Button
                     type="submit"
+                    variant="submit-button"
                 >
                     Reset Password
                 </Button>
-            </form>
-        </div>
+            </StyledButtonWrapper>
+        </StyledForm>
     )
 };
 
