@@ -26,8 +26,9 @@ export const StyledPasswordCheckerWrapper = styled.div`
     justify-content: center;
     align-items: flex-start;
     flex-direction: column;
-    gap: 10px;
-    margin-bottom: 20px;
+    gap: 5px;
+    width: 400px;
+    margin-bottom: 10px;
 `;
 
 export const StyledButtonWrapper = styled.div`

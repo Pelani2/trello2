@@ -47,3 +47,9 @@ export const StyledLoginPrompt = styled.div`
     text-transform: uppercase;
     text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
 `;
+
+export const StyledPassValidationMesasges = styled.div`
+    color: #333;
+    font-size: 1rem;
+    text-align: left;
+`;

@@ -170,13 +170,13 @@ const Signup: React.FC = () => {
 
             <StyledPasswordCheckerWrapper>
                 <Typography
-                    variant={isLengthValid ? 'success-message' : 'error-message'}
+                    variant={isLengthValid ? 'success-message' : 'pass-validation-message'}
                 >
-                    {isLengthValid ? 'Password is at least 8 characters long.' : 'Password must be at least 8 characters long'}
+                    {isLengthValid ? 'Password is at least 8 characters long.' : 'Password must be at least 8 characters long.'}
                 </Typography>
 
                 <Typography
-                    variant={hasSpecialCharacter ? 'success-message' : 'error-message'}
+                    variant={hasSpecialCharacter ? 'success-message' : 'pass-validation-message'}
                 >
                     {hasSpecialCharacter ? 'Password contains at least one special character' : 'Password must contain at least one special character.'}
                 </Typography>
