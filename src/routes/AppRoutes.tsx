@@ -1,6 +1,7 @@
 import React from "react";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
+import ResetPassword from "../pages/ResetPassword";
 
 const AppRoutes = [
     {
@@ -8,8 +9,12 @@ const AppRoutes = [
         element: <Signup />
     },
     {
-        path: "/",
+        path: "/login",
         element: <Login />
+    },
+    {
+        path: "/",
+        element: <ResetPassword />
     }
 ];
 
