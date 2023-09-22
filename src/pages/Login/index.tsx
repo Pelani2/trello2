@@ -2,7 +2,6 @@ import React from 'react';
 import { useForm, Controller } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 import * as yup from 'yup';
-import { Link } from 'react-router-dom';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
@@ -59,6 +58,9 @@ const Login: React.FC = () => {
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <Typography variant='primary-title'>
+                Log In
+            </Typography>
             <StyledFormGroup>
                 <Label 
                     htmlFor='email' 

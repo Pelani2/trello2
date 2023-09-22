@@ -50,6 +50,6 @@ export const StyledLoginPrompt = styled.div`
 
 export const StyledPassValidationMesasges = styled.div`
     color: #333;
-    font-size: 1rem;
+    font-size: 0.9rem;
     text-align: left;
 `;
