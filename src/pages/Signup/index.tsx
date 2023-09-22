@@ -5,7 +5,7 @@ import * as yup from 'yup';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
-import { StyledForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../styles/loginSignupStyles';
+import { StyledForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';

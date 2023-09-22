@@ -84,18 +84,18 @@ export const StyledPromptLink = styled(Link)`
 `;
 
 export const StyledRememberGroup = styled.div`
-    border: 1px solid black;
     width: 400px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     flex-direction: row;
+    margin-bottom: 10px;
 `;
 
 export const StyledRememberWrapper = styled.div`
     display: flex;
-    border: 1px solid black;
-    justify-content: space-between;
+    justify-content:  center;
     align-items: center;
-    width: 200px;
+    gap: 10px;
+    padding: 10px;
 `;

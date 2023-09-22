@@ -11,7 +11,7 @@ import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
 import { RootState } from '../../store/store';
-import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink, StyledRememberWrapper, StyledRememberGroup } from '../styles/loginSignupStyles';
+import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink, StyledRememberWrapper, StyledRememberGroup } from '../../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
 
 interface FormData {
@@ -71,14 +71,12 @@ const Login: React.FC = () => {
                     control={control}
                     defaultValue=''
                     render={({ field }) => (
-                        <>
-                            <Input 
-                                {...field}
-                                type='email'
-                                placeholder='Enter your email'
-                                variant='form-input'
-                            />
-                        </>
+                        <Input 
+                            {...field}
+                            type='email'
+                            placeholder='Enter your email'
+                            variant='form-input'
+                        />
                     )}
                 />
             </StyledFormGroup>
@@ -145,9 +143,9 @@ const Login: React.FC = () => {
                     )}
                 />
 
-                <Link to="/passwordreset">
+                <StyledPromptLink to="/passwordreset">
                     Forgot password
-                </Link>
+                </StyledPromptLink>
             </StyledRememberGroup>
 
             <StyledButtonWrapper>
