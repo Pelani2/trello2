@@ -11,6 +11,8 @@ import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
+import Logo from '../../components/Logo';
+import LogoIcon from "../../assets/images/icons/logo.png";
 
 
 interface FormData {
@@ -58,6 +60,11 @@ const Signup: React.FC = () => {
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <Logo 
+                variant='primary-logo'
+                src={LogoIcon}
+                alt='logo icon'
+            />
             <Typography variant='primary-title'>
                 Sign up
             </Typography>

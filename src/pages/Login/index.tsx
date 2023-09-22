@@ -6,6 +6,8 @@ import Label from '../../components/Label';
 import Input from '../../components/Input';
 import Button from '../../components/Button';
 import Typography from '../../components/Typography';
+import LogoIcon from "../../assets/images/icons/logo.png";
+import Logo from '../../components/Logo';
 import { useDispatch } from 'react-redux';
 import { useSelector } from 'react-redux';
 import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
@@ -58,6 +60,11 @@ const Login: React.FC = () => {
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <Logo 
+                src={LogoIcon}
+                alt='logo icon'
+                variant='primary-logo'
+            />
             <Typography variant='primary-title'>
                 Log In
             </Typography>
