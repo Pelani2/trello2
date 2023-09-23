@@ -10,6 +10,8 @@ import Label from "../../components/Label";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { StyledForm, StyledFormGroup, StyledButtonWrapper } from "../../styles/loginSignupStyles";
+import { StyledBackToLoginLink } from "./resetPasswordStyles";
+import { FaArrowLeft } from "react-icons/fa";
 
 interface FormInputs {
     email: string;
@@ -90,6 +92,9 @@ const ResetPassword: React.FC = () => {
                 >
                     Reset Password
                 </Button>
+                <StyledBackToLoginLink to="/login">
+                    <FaArrowLeft/> Back to Login
+                </StyledBackToLoginLink>
             </StyledButtonWrapper>
         </StyledForm>
     )
