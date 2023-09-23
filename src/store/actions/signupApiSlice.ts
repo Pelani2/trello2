@@ -45,3 +45,24 @@ rejectValue: SignupError }>(
         }
     }
 );
+
+const signupSlice = createSlice({
+    name: 'signup',
+    initialState,
+    reducers: {},
+    extraReducers: (builder) => {
+        builder.addCase(signupApi.pending, (state) => {
+            state.loading = 'pending';
+        });
+        builder.addCase(signupApi.fulfilled, (state, action: PayloadAction<any>) => {
+            state.loading = 'idle',
+            state.user = action.payload;
+        });
+        builder.addCase(signupApi.rejected, (state, action: PayloadAction<SignupError | null | undefined>) => {
+            state.loading = 'idle';
+            state.error = action.payload || null;
+        });
+    }
+});
+
+export default signupSlice.reducer;
