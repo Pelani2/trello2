@@ -1,6 +1,5 @@
 import { createAsyncThunk, createSlice, PayloadAction } from '@reduxjs/toolkit';
 import axios from 'axios';
-import { type } from 'os';
 
 interface SignupError {
     message: string;
@@ -19,8 +18,10 @@ const initialState: SignupState = {
 };
 
 type FormData = {
+    name: string;
     email: string;
     password: string;
+    confirmPassword: string;
 }
 
 type ApiError = {
@@ -35,8 +36,10 @@ rejectValue: SignupError }>(
     async (data, thunkAPI) => {
         try {
             const response = await axios.post('', {
+                name: data.name,
                 email: data.email,
-                password: data.password
+                password: data.password,
+                confirmPassword: data.confirmPassword,
             });
             return response.data;
         } catch (error: unknown) {

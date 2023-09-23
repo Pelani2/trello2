@@ -7,6 +7,8 @@ import { RootState } from '../../store/store';
 import { setIsLengthValid, setHasSpecialCharacter } from '../../store/actions/passwordValidationSlice';
 import { StyledForm, StyledFormGroup, StyledPasswordCheckerWrapper, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink } from '../../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
+import { signupApi } from '../../store/actions/signupApiSlice';
+import { AppDispatch } from '../../store/store';
 import Typography from '../../components/Typography';
 import Label from '../../components/Label';
 import Input from '../../components/Input';
@@ -14,8 +16,7 @@ import Button from '../../components/Button';
 import Logo from '../../components/Logo';
 import LogoIcon from "../../assets/images/icons/logo.png";
 
-
-interface FormData {
+type FormData = {
     name: string;
     email: string;
     password: string;
@@ -23,7 +24,7 @@ interface FormData {
 }
 
 const Signup: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch = useDispatch<AppDispatch>();
     const isLengthValid = useSelector((state: RootState) => state.passwordValidation.isLengthValid);
     const hasSpecialCharacter = useSelector((state: RootState) => state.passwordValidation.hasSpecialCharacter);
 
@@ -53,10 +54,8 @@ const Signup: React.FC = () => {
     });
 
     const onSubmit = (data: FormData) => {
-        console.log(`Form submitted with the following data: \n\nName: ${data.name} 
-        \nEmail: ${data.email} 
-        \nPassword: ${data.password}`);
-    };
+        dispatch(signupApi({ name: data.name, email: data.email, password: data.password, confirmPassword: data.confirmPassword }));
+    };      
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
