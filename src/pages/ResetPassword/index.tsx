@@ -48,13 +48,13 @@ const ResetPassword: React.FC = () => {
             }
         }
     };
-    // do layout
+
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="primary-title">
                 Forgot password?
             </Typography>
-            <Typography variant="">
+            <Typography variant="sub-title">
                 {"No worries we'll send you reset instructions"}
             </Typography>
             <StyledFormGroup>

@@ -53,3 +53,11 @@ export const StyledPassValidationMesasges = styled.div`
     font-size: 0.9rem;
     text-align: left;
 `;
+
+export const StyledSubTitle = styled.div`
+    font-size: 14px;
+    color: black;
+    font-weight: bold;
+    text-align: center;
+    margin: 10px;
+`;
