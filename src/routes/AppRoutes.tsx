@@ -2,6 +2,7 @@ import React from "react";
 import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
+import Home from "../pages/Home";
 
 const AppRoutes = [
     {
@@ -15,6 +16,10 @@ const AppRoutes = [
     {
         path: "/passwordreset",
         element: <ResetPassword />
+    },
+    {
+        path: "/",
+        element: <Home />
     }
 ];
 
