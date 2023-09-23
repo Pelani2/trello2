@@ -3,6 +3,7 @@ import passwordValidationReducer from './actions/passwordValidationSlice';
 import rememberPasswordReducer from './actions/rememberPasswordSlice';
 import passwordResetReducer from './actions/passwordResetSlice';
 import loginApiReducer from './actions/loginApiSlice';
+import signupApiReducer from './actions/signupApiSlice';
 
 const store = configureStore({
     reducer: {
@@ -10,6 +11,7 @@ const store = configureStore({
         rememberPassword: rememberPasswordReducer,
         passwordReset: passwordResetReducer,
         loginApi: loginApiReducer,
+        signupApi: signupApiReducer,
     },
 });
 
