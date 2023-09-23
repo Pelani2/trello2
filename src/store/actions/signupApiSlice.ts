@@ -28,3 +28,20 @@ type ApiError = {
         data: SignupError;
     };
 };
+
+export const signupApi = createAsyncThunk<any, FormData, {
+rejectValue: SignupError }>(
+    'users/signup',
+    async (data, thunkAPI) => {
+        try {
+            const response = await axios.post('', {
+                email: data.email,
+                password: data.password
+            });
+            return response.data;
+        } catch (error: unknown) {
+            const err = error as ApiError;
+            return thunkAPI.rejectWithValue(err.response.data);
+        }
+    }
+);
