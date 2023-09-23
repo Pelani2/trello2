@@ -79,7 +79,7 @@ const ResetPassword: React.FC = () => {
                     />
             </StyledFormGroup>  
             {errors.email && (
-                <Typography variant="">
+                <Typography variant="error-message">
                     {errors.email.message}
                 </Typography>
             )}

@@ -9,7 +9,7 @@ export const StyledPrimaryTitle = styled.div`
     font-size: 36px;
     font-weight: bold;
     color: #7B1FA2;
-    text-shadow: 4px 4px 0 #FFFFFF;
+    text-shadow: 1px 1px 0 black;
 `;
 
 export const StyledErrorMessge = styled.div`
