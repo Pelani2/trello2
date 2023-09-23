@@ -14,6 +14,8 @@ import { setRememberMe } from '../../store/actions/rememberPasswordSlice';
 import { RootState } from '../../store/store';
 import { StyledForm, StyledFormGroup, StyledButtonWrapper, StyledLink, StyledAccountPromptWrapper, StyledPromptLink, StyledRememberWrapper, StyledRememberGroup } from '../../styles/loginSignupStyles';
 import { FaGoogle } from "react-icons/fa";
+import { loginApi } from '../../store/actions/loginApiSlice';
+import { AppDispatch } from '../../store/store';
 
 interface FormData {
     email: string;
@@ -28,8 +30,8 @@ const validationSchema = yup.object().shape({
 });
 
 const Login: React.FC = () => {
-    const dispatch = useDispatch();
     const rememberMe = useSelector((state: RootState) => state.rememberPassword.rememberMe);
+    const dispatch: AppDispatch = useDispatch();
 
     const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
         dispatch(setRememberMe(e.target.checked));
@@ -43,11 +45,12 @@ const Login: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
-    const onSubmit = (data: FormData) => {
-        console.log(`Form submitted with the following data: 
-        \n\nEmail: ${data.email}
-        \nPassword: ${data.password}
-        \nRemember me: ${data.rememberMe}`);
+    const onSubmit = async (data: FormData) => {
+        dispatch(loginApi(data));
+        // console.log(`Form submitted with the following data: 
+        // \n\nEmail: ${data.email}
+        // \nPassword: ${data.password}
+        // \nRemember me: ${data.rememberMe}`);
 
         if (data.rememberMe) {
             const date = new Date();
@@ -161,7 +164,7 @@ const Login: React.FC = () => {
                 <Button variant='submit-button'>
                     Sign in
                 </Button>
-                <StyledLink to="">
+                <StyledLink to="https://www.google.com/">
                     Sign in with Google
                     <FaGoogle style={{ marginLeft: "10px", scale: "1.2" }} />
                 </StyledLink>
