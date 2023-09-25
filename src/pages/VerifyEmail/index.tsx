@@ -29,13 +29,12 @@ const VerifyEmail: React.FC = () => {
     });
 
     const onSubmit = (data: FormInputs) => {
-        const storedResetCode = localStorage.getItem('resetCode');
-
-        if (data.resetCode === storedResetCode) {
-            console.log("Email verified successfully");
+        const savedCode = localStorage.getItem('randomCode');
+        
+        if (data.resetCode === savedCode) {
             navigate('/updatePassword');
         } else {
-            console.log("Invalid reset code");
+            console.error('The entered code does not match the sent code.');
         }
     };
 

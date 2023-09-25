@@ -4,6 +4,7 @@ import rememberPasswordReducer from './actions/rememberPasswordSlice';
 import passwordResetReducer from './actions/passwordResetSlice';
 import loginApiReducer from './actions/loginApiSlice';
 import signupApiReducer from './actions/signupApiSlice';
+import randomCodeReducer from './actions/randomCodeSlice';
 
 const store = configureStore({
     reducer: {
@@ -12,6 +13,7 @@ const store = configureStore({
         passwordReset: passwordResetReducer,
         loginApi: loginApiReducer,
         signupApi: signupApiReducer,
+        randomCode: randomCodeReducer,
     },
 });
 
