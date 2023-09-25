@@ -19,6 +19,7 @@ const validationSchema = yup.object().shape({
 
 const VerifyEmail: React.FC = () => {
     const navigate = useNavigate();
+    const [error, setError] = React.useState<string | null>(null);
 
     const {
         handleSubmit,
@@ -34,7 +35,7 @@ const VerifyEmail: React.FC = () => {
         if (data.resetCode === savedCode) {
             navigate('/updatePassword');
         } else {
-            console.error('The entered code does not match the sent code.');
+            setError('The entered code does not match the sent code.');
         }
     };
 
@@ -70,6 +71,11 @@ const VerifyEmail: React.FC = () => {
             {errors.resetCode && (
                 <Typography variant="error-message">
                     {errors.resetCode.message}
+                </Typography>
+            )}
+            {errors.resetCode && (
+                <Typography variant="error-message">
+                    {error}
                 </Typography>
             )}
             <StyledButtonWrapper>

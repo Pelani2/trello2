@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
@@ -21,14 +21,50 @@ const validationSchema = yup.object().shape({
 
 const UpdatePassword: React.FC = () => {
     const navigate = useNavigate();
+    const [passwordStrength, setPasswordStrength] = useState('');
 
     const {
         handleSubmit,
         control,
         formState: { errors },
+        watch,
     } = useForm<FormInputs>({
         resolver: yupResolver(validationSchema),
     });
+
+    const password = watch('newPassword');
+
+    useEffect(() => {
+        if (password) {
+            const specialCharacters = /[!@#$%^&*()_+\-=[\]{};':"\\|,.<>/?]+/;
+            if (password.length < 6) {
+                setPasswordStrength('Weak');
+            } else if (password.length < 10) {
+                setPasswordStrength('Good');
+            } else if (specialCharacters.test(password)) {
+                setPasswordStrength('Very Strong');
+            } else {
+                setPasswordStrength('Strong');
+            }
+        } else {
+            setPasswordStrength('');
+        }
+    }, [password]);
+    
+    const getPasswordStrengthColor = (strength: string) => {
+        switch(strength) {
+            case "Weak": 
+                return '#FF0000';
+            case "Good":
+                return '#FFA500';
+            case "Strong":
+                return '#008000';
+            case "Very Strong":
+                return "#006400";
+            default:
+                return "#000000";
+        }
+    };
 
     const onSubmit = (data: FormInputs) => {
         console.log(`New Password: ${data.newPassword}`);
@@ -77,6 +113,11 @@ const UpdatePassword: React.FC = () => {
             {errors.newPassword && (
                 <Typography variant='error-message'>
                     {errors.newPassword.message}
+                </Typography>
+            )}
+            {passwordStrength && (
+                <Typography variant=''>
+                    Password strength: {passwordStrength}
                 </Typography>
             )}
 

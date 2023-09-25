@@ -40,7 +40,7 @@ const ResetPassword: React.FC = () => {
         try {
             dispatch(passwordResetStart());
             dispatch(generateRandomCode());
-            console.log(`Reset code: ${generatedCode}`);
+            alert(`Reset code: ${generatedCode}`);
             localStorage.setItem('randomCode', generatedCode);
             navigate('/verifyEmail');
         } catch (error) {
