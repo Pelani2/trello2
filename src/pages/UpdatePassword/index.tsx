@@ -21,6 +21,16 @@ const validationSchema = yup.object().shape({
 });
 
 const UpdatePassword: React.FC = () => {
+    const dispatch = useDispatch();
+    const navigate = useNavigate();
+
+    const {
+        handleSubmit,
+        control,
+        formState: { errors },
+    } = useForm<FormInputs>({
+        resolver: yupResolver(validationSchema),
+    });
     return(
         <div>
 
