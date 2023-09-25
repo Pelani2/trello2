@@ -7,15 +7,16 @@ const variantClassMap:  Record<string, string> = {
     "success-message": "success-message",
     "login-prompt": "login-prompt",
     "pass-validation-message": "pass-validation-message",
-    "sub-title": "sub-title" 
+    "sub-title": "sub-title",
 };
 
 interface TypographyProps {
     variant: keyof typeof variantClassMap;
     children: React.ReactNode;
+    style?: React.CSSProperties;
 }
 
-const Typography: React.FC<TypographyProps> = ({ variant, children }) => {
+const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => {
     let StyledTypography;
 
     switch(variant) {
@@ -43,7 +44,7 @@ const Typography: React.FC<TypographyProps> = ({ variant, children }) => {
     }
 
     return (
-        <StyledTypography>
+        <StyledTypography style={style}>
             {children}
         </StyledTypography>
     );

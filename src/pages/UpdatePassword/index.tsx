@@ -116,7 +116,7 @@ const UpdatePassword: React.FC = () => {
                 </Typography>
             )}
             {passwordStrength && (
-                <Typography variant=''>
+                <Typography variant='error-message' style={{ color: getPasswordStrengthColor(passwordStrength)}}>
                     Password strength: {passwordStrength}
                 </Typography>
             )}
