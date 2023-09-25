@@ -109,6 +109,14 @@ const UpdatePassword: React.FC = () => {
                     {errors.confirmPassword.message}
                 </Typography>
             )}
+            <StyledButtonWrapper>
+                <Button
+                    type='submit'
+                    variant='submit-button'
+                >
+                    Update Password
+                </Button>
+            </StyledButtonWrapper>
         </StyledForm>
     );
 };
