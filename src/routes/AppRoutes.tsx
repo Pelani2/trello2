@@ -4,6 +4,7 @@ import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import Home from "../pages/Home";
 import VerifyPassword from "../pages/VerifyPassword";
+import UpdatePassword from "../pages/UpdatePassword";
 
 const AppRoutes = [
     {
@@ -15,7 +16,7 @@ const AppRoutes = [
         element: <Login />
     },
     {
-        path: "/",
+        path: "/passwordReset",
         element: <ResetPassword />
     },
     {
@@ -25,6 +26,10 @@ const AppRoutes = [
     {
         path: "/verifyPassword",
         element: <VerifyPassword />
+    },
+    {
+        path: "/updatePassword",
+        element: <UpdatePassword />
     }
 ];
 

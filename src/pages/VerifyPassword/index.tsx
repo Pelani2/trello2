@@ -31,15 +31,13 @@ const VerifyPassword: React.FC = () => {
     });
 
     const onSubmit = (data: FormInputs) => {
-        console.log(`Entered reset code: ${data.resetCode}`);
+        const storedResetCode = localStorage.getItem('resetCode');
 
-        const response = { data: { success: true } };
-
-        if (response.data.success) {
-            console.log(`Reset code verified successfully`);
+        if (data.resetCode === storedResetCode) {
+            console.log("Email verified successfully");
             navigate('/login');
         } else {
-            console.log(`An error occurred while verifying the reset code`);
+            console.log("Invalid reset code");
         }
     };
 

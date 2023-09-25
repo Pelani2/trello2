@@ -39,12 +39,15 @@ const ResetPassword: React.FC = () => {
         const randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
         console.log(`Reset code: ${randomString}`);
+
+        // storing the code
+        localStorage.setItem('resetCode', randomString);
         
         const response = { data: { success: true } };
 
         if (response.data.success) {
             dispatch(passwordResetSuccess());
-            navigate('/verifyPassword');
+            navigate('/updatePassword');
         } else {
             dispatch(passwordResetFailure("An error occurred."));
         }
