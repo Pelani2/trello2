@@ -9,6 +9,7 @@ import Label from "../../components/Label";
 import Input from "../../components/Input";
 import Button from "../../components/Button";
 import { StyledForm, StyledFormGroup, StyledButtonWrapper } from "../../styles/loginSignupStyles";
+import { error } from 'console';
 
 interface FormInputs {
     newPassword: string;
@@ -45,11 +46,70 @@ const UpdatePassword: React.FC = () => {
             console.log("An error occurred while updating the password");
         }
     };
-    
-    return(
-        <div>
 
-        </div>
+    return(
+        <StyledForm onSubmit={handleSubmit(onSubmit)}>
+            <Typography variant='primary-title'>
+                Update your password
+            </Typography>
+            <Typography variant='sub-title'>
+                Make sure you create a different password
+            </Typography>
+
+            <StyledFormGroup>
+                <Label 
+                    htmlFor='newPassword'
+                    variant='form-label'
+                >
+                    New password:
+                </Label>
+                <Controller 
+                    name='newPassword'
+                    control={control}
+                    defaultValue=''
+                    render={({ field }) => (
+                        <Input 
+                            {...field}
+                            placeholder='Enter your new password'
+                            variant='form-input'
+                            type='password'
+                        />
+                    )}
+                />
+            </StyledFormGroup>
+            {errors.newPassword && (
+                <Typography variant='error-message'>
+                    {errors.newPassword.message}
+                </Typography>
+            )}
+
+            <StyledFormGroup>
+                <Label 
+                    htmlFor='confirmPassword'
+                    variant='form-label'
+                >
+                    Confirm password:
+                </Label>
+                <Controller 
+                    name='confirmPassword'
+                    control={control}
+                    defaultValue=''
+                    render={({ field }) => (
+                        <Input 
+                            {...field}
+                            placeholder='Confirm your new password'
+                            variant='form-input'
+                            type='password'
+                        />
+                    )}
+                />
+            </StyledFormGroup>
+            {errors.confirmPassword && (
+                <Typography variant='error-message'>
+                    {errors.confirmPassword.message}
+                </Typography>
+            )}
+        </StyledForm>
     );
 };
 
