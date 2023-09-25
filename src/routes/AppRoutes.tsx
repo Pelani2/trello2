@@ -14,11 +14,11 @@ const AppRoutes = [
         element: <Login />
     },
     {
-        path: "/passwordreset",
+        path: "/",
         element: <ResetPassword />
     },
     {
-        path: "/",
+        path: "/home",
         element: <Home />
     }
 ];
