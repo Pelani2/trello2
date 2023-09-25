@@ -3,7 +3,7 @@ import Signup from "../pages/Signup";
 import Login from "../pages/Login";
 import ResetPassword from "../pages/ResetPassword";
 import Home from "../pages/Home";
-import VerifyPassword from "../pages/VerifyPassword";
+import VerifyEmail from "../pages/VerifyEmail";
 import UpdatePassword from "../pages/UpdatePassword";
 
 const AppRoutes = [
@@ -20,12 +20,12 @@ const AppRoutes = [
         element: <ResetPassword />
     },
     {
-        path: "/home",
+        path: "/",
         element: <Home />
     },
     {
-        path: "/verifyPassword",
-        element: <VerifyPassword />
+        path: "/verifyEmail",
+        element: <VerifyEmail />
     },
     {
         path: "/updatePassword",

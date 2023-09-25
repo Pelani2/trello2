@@ -17,7 +17,7 @@ interface InputProps {
     checked?: boolean;
 }
 
-const Input: React.FC<InputProps> = ({
+const Input = React.forwardRef<HTMLInputElement, InputProps>(({
     name,
     placeholder,
     value,
@@ -26,7 +26,7 @@ const Input: React.FC<InputProps> = ({
     variant,
     type,
     checked,
-}) => {
+}, ref) => {
     let StyledInput;
 
     switch(variant) {
@@ -40,6 +40,7 @@ const Input: React.FC<InputProps> = ({
 
     return (
         <StyledInput
+            ref={ref}
             name={name}
             placeholder={placeholder}
             value={value}
@@ -49,6 +50,8 @@ const Input: React.FC<InputProps> = ({
             checked={checked}
         />
     );
-};
+});
+
+Input.displayName = 'Input';
 
 export default Input;

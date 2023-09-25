@@ -1,6 +1,5 @@
 import React from "react";
 import { useNavigate } from 'react-router-dom';
-import { useDispatch } from 'react-redux';
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { yupResolver } from '@hookform/resolvers/yup';
@@ -18,8 +17,7 @@ const validationSchema = yup.object().shape({
     resetCode: yup.string().required("Reset code is required"),
 });
 
-const VerifyPassword: React.FC = () => {
-    const dispatch = useDispatch();
+const VerifyEmail: React.FC = () => {
     const navigate = useNavigate();
 
     const {
@@ -35,7 +33,7 @@ const VerifyPassword: React.FC = () => {
 
         if (data.resetCode === storedResetCode) {
             console.log("Email verified successfully");
-            navigate('/login');
+            navigate('/updatePassword');
         } else {
             console.log("Invalid reset code");
         }
@@ -87,4 +85,4 @@ const VerifyPassword: React.FC = () => {
     );
 };
 
-export default VerifyPassword;
+export default VerifyEmail;

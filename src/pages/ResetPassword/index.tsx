@@ -33,25 +33,45 @@ const ResetPassword: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
+    function generateRandomCode() {
+        const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+      
+        const codeLength = 10; 
+      
+        let randomCode = '';
+      
+        for (let i = 0; i < codeLength; i++) {
+          const randomIndex = Math.floor(Math.random() * characters.length);
+          randomCode += characters.charAt(randomIndex);
+        }
+      
+        return randomCode;
+    }
+
     const onSubmit = () => {
         dispatch(passwordResetStart());
-
-        const randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
-
-        console.log(`Reset code: ${randomString}`);
-
-        // storing the code
-        localStorage.setItem('resetCode', randomString);
-        
-        const response = { data: { success: true } };
-
-        if (response.data.success) {
+      
+        try {
+          const resetCode = generateRandomCode();
+          console.log(`Reset code: ${resetCode}`);
+      
+          // cuvanje reset koda
+          localStorage.setItem('resetCode', resetCode);
+      
+          // simulacija odgovora
+          const response = { data: { success: true } };
+      
+          if (response.data.success) {
             dispatch(passwordResetSuccess());
-            navigate('/updatePassword');
-        } else {
-            dispatch(passwordResetFailure("An error occurred."));
+            navigate('/verifyEmail');
+          } else {
+            throw new Error("An error occurred.");
+          }
+        } catch (error) {
+          dispatch(passwordResetFailure("An unexpected error occurred."));
         }
-    };
+      };
+      
 
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
