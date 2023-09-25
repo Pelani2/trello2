@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { useForm, Controller } from 'react-hook-form';
 import * as yup from 'yup';
 import { passwordResetStart, passwordResetFailure, passwordResetSuccess } from "../../store/actions/passwordResetSlice";
-import axios from "axios";
 import { yupResolver } from "@hookform/resolvers/yup";
 import Typography from "../../components/Typography";
 import Label from "../../components/Label";
@@ -12,6 +11,7 @@ import Button from "../../components/Button";
 import { StyledForm, StyledFormGroup, StyledButtonWrapper } from "../../styles/loginSignupStyles";
 import { StyledBackToLoginLink } from "./resetPasswordStyles";
 import { FaArrowLeft } from "react-icons/fa";
+import { useNavigate } from 'react-router-dom';
 
 interface FormInputs {
     email: string;
@@ -23,6 +23,7 @@ const validationSchema = yup.object().shape({
 
 const ResetPassword: React.FC = () => {
     const dispatch = useDispatch();
+    const navigate = useNavigate();
 
     const {
         handleSubmit, 
@@ -32,33 +33,21 @@ const ResetPassword: React.FC = () => {
         resolver: yupResolver(validationSchema),
     });
 
-    const onSubmit = async(data: FormInputs) => {
+    const onSubmit = () => {
         dispatch(passwordResetStart());
 
-        try {
-            const response = await axios.post('', data);
-            if (response.data.success) {
-                dispatch(passwordResetSuccess());
-            } else {
-                dispatch(passwordResetFailure(response.data.message));
-            }
-        } catch (error) {
-            if (error instanceof Error) {
-                dispatch(passwordResetFailure(error.message)); 
-            } else {
-                dispatch(passwordResetFailure("An unexpected error occurred."));
-            }
-        }
-    };
+        const randomString = Math.random().toString(36).substring(2, 15) + Math.random().toString(36).substring(2, 15);
 
-    function generateRandomString(length: number): string {
-        const charset = 'abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
-        let result = '';
-        for (let i = 0; i < length; i++) {
-            const randomIndex = Math.floor(Math.random() * charset.length);
-            result += charset.charAt(randomIndex);
+        console.log(`Reset code: ${randomString}`);
+        
+        const response = { data: { success: true } };
+
+        if (response.data.success) {
+            dispatch(passwordResetSuccess());
+            navigate('/verifyPassword');
+        } else {
+            dispatch(passwordResetFailure("An error occurred."));
         }
-        return result;
     };
 
     return (
