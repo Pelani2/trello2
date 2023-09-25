@@ -31,6 +31,21 @@ const UpdatePassword: React.FC = () => {
     } = useForm<FormInputs>({
         resolver: yupResolver(validationSchema),
     });
+
+    const onSubmit = (data: FormInputs) => {
+        console.log(`New Password: ${data.newPassword}`);
+
+        // simulacija
+        const response = { data: { success: true } };
+
+        if (response.data.success) {
+            console.log("Password updated successfully");
+            navigate("/login");
+        } else {
+            console.log("An error occurred while updating the password");
+        }
+    };
+    
     return(
         <div>
 
