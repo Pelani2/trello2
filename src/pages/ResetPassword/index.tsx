@@ -9,7 +9,7 @@ import { StyledBackToLoginLink } from "./resetPasswordStyles";
 import { FaArrowLeft } from "react-icons/fa";
 import { useNavigate } from 'react-router-dom';
 import { generateRandomCode } from "../../store/actions/randomCodeSlice";
-import { RootState } from "../../store/store";
+import { RootState, AppDispatch } from "../../store/store";
 import Typography from "../../components/Typography";
 import Label from "../../components/Label";
 import Input from "../../components/Input";
@@ -24,9 +24,9 @@ const validationSchema = yup.object().shape({
 });
 
 const ResetPassword: React.FC = () => {
-    const dispatch = useDispatch();
+    const dispatch: AppDispatch = useDispatch();
+    const generatedCode = useSelector((state: RootState) => state.randomCode.code);
     const navigate = useNavigate();
-    const randomCode = useSelector((state: RootState) => state.randomCode.code);
 
     const {
         handleSubmit, 
@@ -40,19 +40,14 @@ const ResetPassword: React.FC = () => {
         try {
             dispatch(passwordResetStart());
             dispatch(generateRandomCode());
-
-            localStorage.setItem('randomCode', randomCode);
-            
-            console.log(`Reset code: ${randomCode}`);
-
+            console.log(`Reset code: ${generatedCode}`);
+            localStorage.setItem('randomCode', generatedCode);
             navigate('/verifyEmail');
-
         } catch (error) {
-            dispatch(passwordResetFailure("An unexpected error occurred."));
+            dispatch(passwordResetFailure("Error"));
         }
     };
       
-
     return (
         <StyledForm onSubmit={handleSubmit(onSubmit)}>
             <Typography variant="primary-title">
