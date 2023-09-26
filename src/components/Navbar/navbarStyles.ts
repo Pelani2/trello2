@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import { FaSearch, FaCog, FaBell, FaExclamation,
-FaUser } from 'react-icons/fa';
 
 export const StyledNavbarContainer = styled.div`
     display: flex;
@@ -24,4 +22,11 @@ export const VerticalBreak = styled.div`
     height: 50px;
     background-color: #fff;
     margin: 0 10px;
+`;
+
+export const StyledStatsAndTextWrapper = styled.div`
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5px;
 `;

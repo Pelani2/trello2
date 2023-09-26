@@ -1,11 +1,15 @@
 import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { AiOutlineSearch } from 'react-icons/ai';
+import { BiSearch } from 'react-icons/bi';
+import Input from "../Input";
 
 interface SearchBarProps {
+    variant?: "Fa" | "Ai" | "Bi";
     onSearch: (searchTerm: string) => void;
 }
 
-const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
+const SearchBar: React.FC<SearchBarProps> = ({ variant = "Fa", onSearch }) => {
     const [searchTerm, setSearchTerm] = useState("");
 
     const handleSearch = (event: React.FormEvent) => {
@@ -13,19 +17,24 @@ const SearchBar: React.FC<SearchBarProps> = ({ onSearch }) => {
         onSearch(searchTerm);
     };
 
+    const handleInputChange = (event: React.ChangeEvent<HTMLInputElement>) => {
+        setSearchTerm(event.target.value);
+    };
+
+    const SearchIcon = variant === "Ai" ? AiOutlineSearch : variant === "Bi" ? BiSearch : FaSearch;
+
     return (
         <form 
             onSubmit={handleSearch}
             style={{ display: 'flex' }}
         >
-            <input 
-                type="text"
+            <Input 
+                variant="form-input"
                 value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                style={{ flexGrow: 1 }}
+                onChange={handleInputChange}
             />
             <button type="submit">
-                <FaSearch />
+                <SearchIcon />
             </button>
         </form>
     );

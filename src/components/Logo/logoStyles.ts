@@ -16,3 +16,14 @@ export const StyledPrimaryLogo = styled.img`
         transform: rotate(180deg);
     }
 `;
+
+export const StyledNarbarLogo = styled.img`
+    width: 76px;
+    height: 30px;
+`;
+
+export const StyledNavbarStatsIcon = styled.img`
+    width: 24px;
+    height: 24px;
+`;
+

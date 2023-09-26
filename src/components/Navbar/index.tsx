@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledNavbarContainer, VerticalBreak, StyledNavContentWrapper } from "./navbarStyles";
+import { StyledNavbarContainer, VerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
 import Logo from "../Logo";
 import Typography from "../Typography";
 import TrelloIcon from "../../assets/images/icons/TrelloLogo.png";
@@ -15,20 +15,26 @@ const Navbar: React.FC = () => {
         <StyledNavbarContainer>
             <StyledNavContentWrapper>
                 <Logo
-                    variant="primary-logo"
+                    variant="navbar-logo"
                     src={TrelloIcon}
                     alt="trello logo"
                 />
+
                 <VerticalBreak />
-                <Logo 
-                    variant="primary-logo"
-                    src={StatsIcon}
-                    alt="stats icon"
-                />
-                <Typography variant="">
-                    Boards
-                </Typography>
+
+                <StyledStatsAndTextWrapper>
+                    <Logo 
+                        variant="navbar-stats-icon"
+                        src={StatsIcon}
+                        alt="stats icon"
+                    />
+                    <Typography variant="">
+                        Boards
+                    </Typography>
+                </StyledStatsAndTextWrapper>
+                
                 <VerticalBreak />
+  
                 <SearchBar onSearch={handleSearch} />
             </StyledNavContentWrapper>
         </StyledNavbarContainer>

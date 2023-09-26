@@ -19,6 +19,10 @@ export const StyledFormInput = styled.input`
     }
 `;
 
+export const StyledSearchBarInput = styled.input`
+
+`;
+
 export const StyledDefaultInput = styled.input`
     
 `;
