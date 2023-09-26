@@ -1,8 +1,9 @@
 import React, { ReactNode } from "react";
-import { StyledDefaultButton, StyledSubmitButton } from "./button-styles";
+import { StyledDefaultButton, StyledSubmitButton, StyledSearchBarButton } from "./button-styles";
 
 const variantClassMap: Record<string, string> = {
     "submit-button": "submit-button",
+    "search-bar-button": "search-bar-button",
 };
 
 interface ButtonProps {
@@ -17,6 +18,9 @@ const Button: React.FC<ButtonProps> = ({ variant, children, type }) => {
     switch(variant) {
         case "submit-button":
             StyledButton = StyledSubmitButton;
+            break;
+        case "search-bar-button":
+            StyledButton = StyledSearchBarButton;
             break;
         default:
             StyledButton = StyledDefaultButton;

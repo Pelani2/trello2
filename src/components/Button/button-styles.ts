@@ -29,3 +29,14 @@ export const StyledSubmitButton = styled.button`
         transform: scale(1.1) translateZ(0);
     }
 `;
+
+export const StyledSearchBarButton = styled.button`
+    border: none;
+    background-color: transparent;
+    cursor: pointer;
+
+    svg {
+        font-size: 20px;
+        color: #333;
+    }
+`;

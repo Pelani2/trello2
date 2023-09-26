@@ -2,7 +2,9 @@ import React, { useState } from "react";
 import { FaSearch } from "react-icons/fa";
 import { AiOutlineSearch } from 'react-icons/ai';
 import { BiSearch } from 'react-icons/bi';
+import { StyledSearchForm } from "./searchBarStyles";
 import Input from "../Input";
+import Button from "../Button";
 
 interface SearchBarProps {
     variant?: "Fa" | "Ai" | "Bi";
@@ -24,9 +26,8 @@ const SearchBar: React.FC<SearchBarProps> = ({ variant = "Fa", onSearch }) => {
     const SearchIcon = variant === "Ai" ? AiOutlineSearch : variant === "Bi" ? BiSearch : FaSearch;
 
     return (
-        <form 
+        <StyledSearchForm
             onSubmit={handleSearch}
-            style={{ display: 'flex' }}
         >
             <Input 
                 variant="search-bar-input"
@@ -36,7 +37,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ variant = "Fa", onSearch }) => {
             <button type="submit">
                 <SearchIcon />
             </button>
-        </form>
+        </StyledSearchForm>
     );
 };
 
