@@ -29,7 +29,7 @@ const SearchBar: React.FC<SearchBarProps> = ({ variant = "Fa", onSearch }) => {
             style={{ display: 'flex' }}
         >
             <Input 
-                variant="form-input"
+                variant="search-bar-input"
                 value={searchTerm}
                 onChange={handleInputChange}
             />

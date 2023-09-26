@@ -20,7 +20,16 @@ export const StyledFormInput = styled.input`
 `;
 
 export const StyledSearchBarInput = styled.input`
+    width: 100%;
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    color: #333;
+    outline: none;
 
+    &::placeholder {
+        color: #999;
+    }
 `;
 
 export const StyledDefaultInput = styled.input`

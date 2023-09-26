@@ -1,9 +1,10 @@
 import React from "react";
-import { StyledFormInput, StyledDefaultInput } from "./inputStyles";
+import { StyledFormInput, StyledDefaultInput, StyledSearchBarInput } from "./inputStyles";
 
 const variantClassMap: Record<string, string> = {
     "form-input": "form-input",
     "checkbox-input": "checkbox-input",
+    "search-bar-input": "search-bar-input",
 };
 
 interface InputProps {
@@ -32,6 +33,9 @@ const Input = React.forwardRef<HTMLInputElement, InputProps>(({
     switch(variant) {
         case "form-input":
             StyledInput = StyledFormInput;
+            break;
+        case "search-bar-input":
+            StyledInput = StyledSearchBarInput;
             break;
         default: 
             StyledInput = StyledDefaultInput;
