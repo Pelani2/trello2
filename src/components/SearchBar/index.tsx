@@ -34,9 +34,12 @@ const SearchBar: React.FC<SearchBarProps> = ({ variant = "Fa", onSearch }) => {
                 value={searchTerm}
                 onChange={handleInputChange}
             />
-            <button type="submit">
+            <Button 
+                type="submit" 
+                variant="search-bar-button"
+            >
                 <SearchIcon />
-            </button>
+            </Button>
         </StyledSearchForm>
     );
 };
