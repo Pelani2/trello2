@@ -1,10 +1,11 @@
 import React from "react";
-import { StyledNavbarContainer, VerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
+import { StyledNavbarContainer, StyledVerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
 import Logo from "../Logo";
 import Typography from "../Typography";
 import TrelloIcon from "../../assets/images/icons/TrelloLogo.png";
 import StatsIcon from "../../assets/images/icons/TrelloStatIcon.png";
 import SearchBar from "../SearchBar";
+import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from 'react-icons/ai';
 
 const Navbar: React.FC = () => {
     const handleSearch = (searchTerm: string) => {
@@ -20,7 +21,7 @@ const Navbar: React.FC = () => {
                     alt="trello logo"
                 />
 
-                <VerticalBreak />
+                <StyledVerticalBreak />
 
                 <StyledStatsAndTextWrapper>
                     <Logo 
@@ -33,9 +34,15 @@ const Navbar: React.FC = () => {
                     </Typography>
                 </StyledStatsAndTextWrapper>
                 
-                <VerticalBreak />
+                <StyledVerticalBreak />
   
                 <SearchBar onSearch={handleSearch} />
+            </StyledNavContentWrapper>
+
+            <StyledNavContentWrapper>
+                <AiOutlinePlus />
+                <AiOutlineExclamation />
+                <AiOutlineBell />
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );

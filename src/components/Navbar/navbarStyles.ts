@@ -17,7 +17,7 @@ export const StyledNavContentWrapper = styled.div`
     gap: 20px;
 `;
 
-export const VerticalBreak = styled.div`
+export const StyledVerticalBreak = styled.div`
     width: 2px;
     height: 50px;
     background-color: #fff;
