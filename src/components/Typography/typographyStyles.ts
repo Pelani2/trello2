@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 export const StyledDefault = styled.div`
     font-size: 16px;
-    color: #333;
+    color: white;
 `;
 
 export const StyledPrimaryTitle = styled.div`

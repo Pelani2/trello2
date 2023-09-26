@@ -12,12 +12,16 @@ export const StyledNavbarContainer = styled.div`
 `;
 
 export const StyledNavContentWrapper = styled.div`
-
+    border: 1px solid black;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
 `;
 
 export const VerticalBreak = styled.div`
     width: 2px;
-    height: 24px;
+    height: 50px;
     background-color: #fff;
     margin: 0 10px;
 `;
