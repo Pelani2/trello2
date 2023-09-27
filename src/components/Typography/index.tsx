@@ -47,8 +47,7 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => 
             StyledTypography = StyledNotificationText;
             break;
         default:
-            StyledTypography = StyledDefault;
-            break;
+            return null;
     }
 
     return (
