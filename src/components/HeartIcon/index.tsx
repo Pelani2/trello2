@@ -1,14 +1,15 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
-import { BsHeart } from 'react-icons/bs';
+import { AiFillHeart } from 'react-icons/ai';
 
 interface HeartProps {
     color: string;
 }
 
-const Heart = styled(BsHeart)<HeartProps>`
+const Heart = styled(AiFillHeart)<HeartProps>`
     color: ${props => props.color};
     cursor: pointer;
+    font-size: 24px;
 `;
 
 const HeartIcon: React.FC = () => {

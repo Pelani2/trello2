@@ -1,5 +1,6 @@
 import React from "react";
 import Typography from "../Typography";
+import HeartIcon from "../HeartIcon";
 
 const Brackets: React.FC = () => {
     return (
@@ -9,7 +10,7 @@ const Brackets: React.FC = () => {
             </Typography>
 
             <div className="brackets__icons">
-                
+                <HeartIcon />
             </div>
         </div>
     );
