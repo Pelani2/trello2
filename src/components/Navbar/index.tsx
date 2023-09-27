@@ -5,7 +5,7 @@ import Typography from "../Typography";
 import TrelloIcon from "../../assets/images/icons/TrelloLogo.png";
 import StatsIcon from "../../assets/images/icons/TrelloStatIcon.png";
 import SearchBar from "../SearchBar";
-import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from 'react-icons/ai';
+import NavbarIcon from "../NavbarIcon";
 
 const Navbar: React.FC = () => {
     const handleSearch = (searchTerm: string) => {
@@ -40,9 +40,9 @@ const Navbar: React.FC = () => {
             </StyledNavContentWrapper>
 
             <StyledNavContentWrapper>
-                <AiOutlinePlus />
-                <AiOutlineExclamation />
-                <AiOutlineBell />
+                <NavbarIcon variant="plus" />
+                <NavbarIcon variant="exclamation" />
+                <NavbarIcon variant="bell" />                
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );

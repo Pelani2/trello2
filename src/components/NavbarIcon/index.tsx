@@ -1,10 +1,10 @@
 import React from "react";
-import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from "react-icons/ai";
+import { StyledPlus, StyledExclamation, StyledBell } from "./navbarIconStyles";
 
 const variantClassMap = {
-    "plus": AiOutlinePlus,
-    "exclamation": AiOutlineExclamation,
-    "bell": AiOutlineBell,
+    "plus": StyledPlus,
+    "exclamation": StyledExclamation,
+    "bell": StyledBell,
 };
 
 interface NavbarIconProps {
