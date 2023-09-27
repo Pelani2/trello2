@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const StyledNavbarProfileIcon = styled.img`
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border-radius: 50%;
 `;
