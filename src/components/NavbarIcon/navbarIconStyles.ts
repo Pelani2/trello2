@@ -1,6 +1,10 @@
 import styled from "styled-components";
 import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from "react-icons/ai";
 
+interface StyledDropdownContentProps {
+    isOpen: boolean;
+}
+
 export const StyledPlus = styled(AiOutlinePlus)`
     color: #5f9ea0;
     font-size: 32px;
@@ -8,7 +12,6 @@ export const StyledPlus = styled(AiOutlinePlus)`
     transition: transform 0.5s ease;
     
     &:hover {
-        transform: rotate(45deg);
         cursor: pointer;
     }
 `;
@@ -30,6 +33,10 @@ export const StyledExclamation = styled(AiOutlineExclamation)`
             opacity: 1;
         }
     }
+
+    &:hover {
+        cursor: pointer;
+    }
 `;
 
 export const StyledBell = styled(AiOutlineBell)`
@@ -37,4 +44,46 @@ export const StyledBell = styled(AiOutlineBell)`
     font-size: 32px;
     border: 4px dashed #5f9ea0;
     box-shadow: 0 0 10px #5f9ea0;
+
+    &:hover {
+        cursor: pointer;
+    }
+`;
+
+export const StyledDropdownContent = styled.div<StyledDropdownContentProps>`
+    position: absolute;
+    background-color: black;
+    width: 200px;
+    display: ${({ isOpen }) => isOpen ? "block" : "none"};
+    overflow: hidden;
+    transition: max-height 0.2s ease-in-out;
+    z-index: 999;
+
+    ${({ isOpen }) => isOpen && `
+        height: 500px;
+        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        background: linear-gradient(90deg, rgba(113,89,193,1) 0%, rgba(81,74,219,1) 35%, rgba(48,58,242,1) 100%);
+        border: 2px solid #fff;
+        border-radius: 10px;
+        box-shadow: 0 20px 20px rgba(0,0,0,0.2);
+        color: #fff;
+        overflow: auto;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 10px;
+
+        &::-webkit-scrollbar-track {
+            background: transparent;
+        }
+
+        &::-webkit-scrollbar-thumb {
+            background: #888;
+            border-radius: 10px;
+        }
+
+        &::-webkit-scrollbar-thumb:hover {
+            background: #555;
+        }
+    `}
 `;

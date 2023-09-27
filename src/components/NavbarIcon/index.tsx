@@ -1,5 +1,6 @@
-import React from "react";
-import { StyledPlus, StyledExclamation, StyledBell } from "./NavbarIconStyles";
+import React, { useState } from "react";
+import { StyledPlus, StyledExclamation, StyledBell, StyledDropdownContent } from "./NavbarIconStyles";
+import Typography from "../Typography";
 
 const variantClassMap = {
     "plus": StyledPlus,
@@ -12,6 +13,7 @@ interface NavbarIconProps {
 }
 
 const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
+    const [isOpen, setIsOpen] = useState(false);
     let StyledIcon;
     switch (variant) {
         case "plus":
@@ -28,7 +30,14 @@ const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
     }
 
     return (
-        <StyledIcon />
+        <div onClick={() => setIsOpen(!isOpen)}>
+            <StyledIcon />
+            <StyledDropdownContent isOpen={isOpen}>
+                <Typography variant="">
+                    Some dropdown content
+                </Typography>
+            </StyledDropdownContent>
+        </div>
     );
 };
 
