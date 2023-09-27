@@ -2,9 +2,9 @@ import React from "react";
 import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from "react-icons/ai";
 
 const variantClassMap = {
-    "plus": "plus",
-    "exclamation": "exclamation",
-    "bell": "bell",
+    "plus": AiOutlinePlus,
+    "exclamation": AiOutlineExclamation,
+    "bell": AiOutlineBell,
 };
 
 interface NavbarIconProps {
@@ -15,16 +15,21 @@ const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
     let StyledIcon;
     switch (variant) {
         case "plus":
+            StyledIcon = variantClassMap.plus;
             break;
         case "exclamation":
+            StyledIcon = variantClassMap.exclamation;
             break;
         case "bell":
+            StyledIcon = variantClassMap.bell;
             break;
         default:
-            break;
+            return null;
     }
 
     return (
         <StyledIcon />
     );
-}
+};
+
+export default NavbarIcon;
