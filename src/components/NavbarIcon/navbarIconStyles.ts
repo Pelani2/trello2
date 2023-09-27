@@ -2,9 +2,9 @@ import styled from "styled-components";
 import { AiOutlinePlus, AiOutlineExclamation, AiOutlineBell } from "react-icons/ai";
 
 export const StyledPlus = styled(AiOutlinePlus)`
-    color: #00ff00;
+    color: #5f9ea0;
     font-size: 32px;
-    border: 4px dashed #00ff00;
+    border: 4px dashed #5f9ea0;
     transition: transform 0.5s ease;
     
     &:hover {
@@ -14,9 +14,9 @@ export const StyledPlus = styled(AiOutlinePlus)`
 `;
 
 export const StyledExclamation = styled(AiOutlineExclamation)`
-    color: #00ff00;
+    color: #5f9ea0;
     font-size: 32px;
-    border: 4px dashed #00ff00;
+    border: 4px dashed #5f9ea0;
     animation: pulse 1s infinite;
     
     @keyframes pulse {
@@ -33,8 +33,8 @@ export const StyledExclamation = styled(AiOutlineExclamation)`
 `;
 
 export const StyledBell = styled(AiOutlineBell)`
-    color: #00ff00;
+    color: #5f9ea0;
     font-size: 32px;
-    border: 4px dashed #00ff00;
-    box-shadow: 0 0 10px #00ff00;
+    border: 4px dashed #5f9ea0;
+    box-shadow: 0 0 10px #5f9ea0;
 `;

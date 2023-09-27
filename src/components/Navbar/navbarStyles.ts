@@ -4,8 +4,11 @@ export const StyledNavbarContainer = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 10px 20px;
+    padding: 15px;
     color: #fff;
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+    transform: perspective(600px);
+    transform-origin: center bottom;
 `;
 
 export const StyledNavContentWrapper = styled.div`
