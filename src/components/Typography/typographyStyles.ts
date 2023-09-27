@@ -66,3 +66,12 @@ export const StyledNavbarText = styled.div`
     font-size: 18px;
     color: black;
 `;
+
+export const StyledNotificationText = styled.div`
+    font-size: 16px;
+    color: #333;
+    background-color: #f9f9f9;
+    padding: 10px;
+    border-radius: 5px;
+    box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
+`;

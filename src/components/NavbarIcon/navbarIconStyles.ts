@@ -60,30 +60,14 @@ export const StyledDropdownContent = styled.div<StyledDropdownContentProps>`
     z-index: 999;
 
     ${({ isOpen }) => isOpen && `
-        height: 500px;
-        transition: all 0.5s cubic-bezier(0.25, 0.8, 0.25, 1);
+        max-height: 500px;
         background: linear-gradient(90deg, rgba(113,89,193,1) 0%, rgba(81,74,219,1) 35%, rgba(48,58,242,1) 100%);
         border: 2px solid #fff;
         border-radius: 10px;
         box-shadow: 0 20px 20px rgba(0,0,0,0.2);
-        color: #fff;
-        overflow: auto;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         padding: 10px;
-
-        &::-webkit-scrollbar-track {
-            background: transparent;
-        }
-
-        &::-webkit-scrollbar-thumb {
-            background: #888;
-            border-radius: 10px;
-        }
-
-        &::-webkit-scrollbar-thumb:hover {
-            background: #555;
-        }
     `}
 `;

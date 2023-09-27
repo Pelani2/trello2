@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { StyledNavbarContainer, StyledVerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
 import Logo from "../Logo";
 import Typography from "../Typography";
@@ -10,6 +10,12 @@ import ProfileIcon from "../ProfileIcon";
 import FaceIcon from "../../assets/images/icons/ProfileIcon.png";
 
 const Navbar: React.FC = () => {
+    const [openDropdown, setOpenDropdown] = useState(null);
+
+    const  handleIconClick = (iconName) => {
+        setOpenDropdown(openDropdown === iconName ? null : iconName);
+    }
+    
     const handleSearch = (searchTerm: string) => {
         console.log(`\n\nSearching for: ${searchTerm}`);
     };
@@ -42,7 +48,11 @@ const Navbar: React.FC = () => {
             </StyledNavContentWrapper>
 
             <StyledNavContentWrapper>
-                <NavbarIcon variant="plus" />
+                <NavbarIcon 
+                    isOpen={openDropdown === "plus"}
+                    onClick={() => handleIconClick("plus")} 
+                    variant="plus" 
+                />
                 <NavbarIcon variant="exclamation" />
                 <NavbarIcon variant="bell" />
                 <ProfileIcon 

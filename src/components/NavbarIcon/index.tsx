@@ -33,7 +33,7 @@ const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
         <div onClick={() => setIsOpen(!isOpen)}>
             <StyledIcon />
             <StyledDropdownContent isOpen={isOpen}>
-                <Typography variant="">
+                <Typography variant="notification-text">
                     Some dropdown content
                 </Typography>
             </StyledDropdownContent>
