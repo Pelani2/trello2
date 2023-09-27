@@ -61,3 +61,8 @@ export const StyledSubTitle = styled.div`
     text-align: center;
     margin: 10px;
 `;
+
+export const StyledNavbarText = styled.div`
+    font-size: 18px;
+    color: black;
+`;

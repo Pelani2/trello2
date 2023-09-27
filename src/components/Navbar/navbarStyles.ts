@@ -5,12 +5,10 @@ export const StyledNavbarContainer = styled.div`
     align-items: center;
     justify-content: space-between;
     padding: 10px 20px;
-    background-color: #333;
     color: #fff;
 `;
 
 export const StyledNavContentWrapper = styled.div`
-    border: 1px solid black;
     display: flex;
     align-items: center;
     justify-content: space-between;

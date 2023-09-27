@@ -29,7 +29,7 @@ const Navbar: React.FC = () => {
                         src={StatsIcon}
                         alt="stats icon"
                     />
-                    <Typography variant="">
+                    <Typography variant="navbar-text">
                         Boards
                     </Typography>
                 </StyledStatsAndTextWrapper>
@@ -40,7 +40,7 @@ const Navbar: React.FC = () => {
             </StyledNavContentWrapper>
 
             <StyledNavContentWrapper>
-                
+
                 <NavbarIcon variant="plus" />
                 <NavbarIcon variant="exclamation" />
                 <NavbarIcon variant="bell" />

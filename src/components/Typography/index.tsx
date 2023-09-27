@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledPrimaryTitle, StyledDefault, StyledErrorMessge, StyledSuccessMessage, StyledLoginPrompt, StyledPassValidationMesasges, StyledSubTitle } from "./typographyStyles";
+import { StyledPrimaryTitle, StyledDefault, StyledErrorMessge, StyledSuccessMessage, StyledLoginPrompt, StyledPassValidationMesasges, StyledSubTitle, StyledNavbarText } from "./typographyStyles";
 
 const variantClassMap:  Record<string, string> = {
     "primary-title": "primary-title",
@@ -8,6 +8,7 @@ const variantClassMap:  Record<string, string> = {
     "login-prompt": "login-prompt",
     "pass-validation-message": "pass-validation-message",
     "sub-title": "sub-title",
+    "navbar-text": "navbar-text",
 };
 
 interface TypographyProps {
@@ -37,6 +38,9 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => 
             break;
         case 'pass-validation-message':
             StyledTypography = StyledPassValidationMesasges;
+            break;
+        case 'navbar-text':
+            StyledTypography = StyledNavbarText;
             break;
         default:
             StyledTypography = StyledDefault;
