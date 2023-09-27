@@ -4,7 +4,7 @@ import { StyledDefaultLogo, StyledPrimaryLogo, StyledNarbarLogo, StyledNavbarSta
 const variantClassMap: Record<string, string> = {
     "primary-logo": "primary-logo",
     "navbar-logo": "navbar-logo",
-    "nvabar-stats-icon": "navbar-stats-icon",
+    "navbar-stats-icon": "navbar-stats-icon",
 };
 
 interface LogoProps {
