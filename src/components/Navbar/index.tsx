@@ -40,9 +40,11 @@ const Navbar: React.FC = () => {
             </StyledNavContentWrapper>
 
             <StyledNavContentWrapper>
+                
                 <NavbarIcon variant="plus" />
                 <NavbarIcon variant="exclamation" />
-                <NavbarIcon variant="bell" />                
+                <NavbarIcon variant="bell" />
+                
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );

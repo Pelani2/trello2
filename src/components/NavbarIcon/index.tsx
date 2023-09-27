@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledPlus, StyledExclamation, StyledBell } from "./navbarIconStyles";
+import { StyledPlus, StyledExclamation, StyledBell } from "./NavbarIconStyles";
 
 const variantClassMap = {
     "plus": StyledPlus,
