@@ -67,7 +67,6 @@ export const StyledDropdownContent = styled.div<StyledDropdownContentProps>`
         box-shadow: 0 20px 20px rgba(0,0,0,0.2);
         display: flex;
         flex-direction: column;
-        align-items: flex-start;
         padding: 10px;
     `}
 `;

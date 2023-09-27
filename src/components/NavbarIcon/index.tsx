@@ -10,10 +10,11 @@ const variantClassMap = {
 
 interface NavbarIconProps {
     variant: keyof typeof variantClassMap;
+    isOpened: boolean;
+    handleClick: () => void;
 }
 
-const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
-    const [isOpen, setIsOpen] = useState(false);
+const NavbarIcon: React.FC<NavbarIconProps> = ({ variant, isOpened, handleClick }) => {
     let StyledIcon;
     switch (variant) {
         case "plus":
@@ -30,11 +31,11 @@ const NavbarIcon: React.FC<NavbarIconProps> = ({ variant }) => {
     }
 
     return (
-        <div onClick={() => setIsOpen(!isOpen)}>
+        <div onClick={handleClick}>
             <StyledIcon />
-            <StyledDropdownContent isOpen={isOpen}>
+            <StyledDropdownContent isOpen={isOpened}>
                 <Typography variant="notification-text">
-                    Some dropdown content
+                    Notification content
                 </Typography>
             </StyledDropdownContent>
         </div>

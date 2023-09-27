@@ -10,9 +10,9 @@ import ProfileIcon from "../ProfileIcon";
 import FaceIcon from "../../assets/images/icons/ProfileIcon.png";
 
 const Navbar: React.FC = () => {
-    const [openDropdown, setOpenDropdown] = useState(null);
+    const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-    const  handleIconClick = (iconName) => {
+    const  handleIconClick = (iconName: string) => {
         setOpenDropdown(openDropdown === iconName ? null : iconName);
     }
     
@@ -49,12 +49,20 @@ const Navbar: React.FC = () => {
 
             <StyledNavContentWrapper>
                 <NavbarIcon 
-                    isOpen={openDropdown === "plus"}
-                    onClick={() => handleIconClick("plus")} 
+                    isOpened={openDropdown === "plus"}
+                    handleClick={() => handleIconClick("plus")} 
                     variant="plus" 
                 />
-                <NavbarIcon variant="exclamation" />
-                <NavbarIcon variant="bell" />
+                <NavbarIcon 
+                    isOpened={openDropdown === "exclamation"}
+                    handleClick={() => handleIconClick("exclamation")} 
+                    variant="exclamation" 
+                />
+                <NavbarIcon 
+                    isOpened={openDropdown === "bell"}
+                    handleClick={() => handleIconClick("bell")} 
+                    variant="bell" 
+                />
                 <ProfileIcon 
                     src={FaceIcon}
                     alt="profile icon"
