@@ -1,18 +1,38 @@
 import React from "react";
 import Typography from "../Typography";
 import HeartIcon from "../HeartIcon";
+import { StyledVerticalBreak } from "../Navbar/navbarStyles";
+import { StyledBracketsContainer, StyledBracketsIcons } from "./BracketsStyles";
+import Icon from "../Icon";
+import GlobeIcon from "../../assets/images/icons/SomeShapeIcon.png";
+import HardIcon from "../../assets/images/icons/HardShapeIcon.png";
 
 const Brackets: React.FC = () => {
     return (
-        <div className="brackets-container">
+        <StyledBracketsContainer>
             <Typography variant="navbar-text">
                 Brackets
             </Typography>
 
-            <div className="brackets__icons">
+            <StyledBracketsIcons>
                 <HeartIcon />
-            </div>
-        </div>
+                <StyledVerticalBreak />
+                <Icon 
+                    variant="brackets-icon"
+                    alt="globe icon"
+                    src={GlobeIcon}
+                />
+                <Typography variant="navbar-text">
+                    Public
+                </Typography>
+                <StyledVerticalBreak />
+                <Icon 
+                    variant="brackets-icon"
+                    alt="hard icon"
+                    src={HardIcon}
+                />
+            </StyledBracketsIcons>
+        </StyledBracketsContainer>
     );
 };
 

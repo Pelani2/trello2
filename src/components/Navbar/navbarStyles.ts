@@ -21,7 +21,7 @@ export const StyledNavContentWrapper = styled.div`
 export const StyledVerticalBreak = styled.div`
     width: 2px;
     height: 50px;
-    background-color: #fff;
+    background-color: black;
     margin: 0 10px;
 `;
 

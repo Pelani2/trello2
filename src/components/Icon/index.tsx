@@ -7,10 +7,12 @@ const variantClassMap: Record<string, string> = {
 
 interface IconProps {
     variant: keyof typeof variantClassMap;
+    src: string;
+    alt?: string;
 }
 
 
-const Icon: React.FC<IconProps> = ({ variant }) => {
+const Icon: React.FC<IconProps> = ({ variant, src, alt }) => {
     let StyledIcon;
 
     switch(variant) {
@@ -21,7 +23,10 @@ const Icon: React.FC<IconProps> = ({ variant }) => {
             return null;
     }
     return (
-        <StyledIcon />
+        <StyledIcon 
+            src={src}
+            alt={alt}
+        />
     );
 };
 
