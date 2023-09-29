@@ -1,9 +1,11 @@
 import React, { useState } from "react";
-import { StyledBracketsIcon, StyledBracketsIconClicked } from "./IconStyles";
+import { StyledBracketIcon, StyledGlobeIconClicked, StyledHardDriveIconClicked } from "./IconStyles";
 
 const variantClassMap: Record<string, any> = {
-    "brackets-icon": StyledBracketsIcon,
-    "brackets-icon-clicked": StyledBracketsIconClicked,
+    "globe-icon": StyledBracketIcon,
+    "globe-icon-clicked": StyledGlobeIconClicked,
+    "hard-drive-icon": StyledBracketIcon,
+    "hard-drive-icon-clicked": StyledHardDriveIconClicked,
 };
 
 interface IconProps {
@@ -17,7 +19,18 @@ interface IconProps {
 const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick }) => {
     const [isClicked, setIsClicked] = useState(false);
 
-    const StyledIcon = isClicked ? variantClassMap[`${variant}-clicked`] : variantClassMap[variant];
+    let StyledIcon;
+
+    switch(variant) {
+        case "globe-icon":
+            StyledIcon = isClicked ? variantClassMap["globe-icon-clicked"] : variantClassMap["globe-icon"];
+            break;
+        case "hard-drive-icon":
+            StyledIcon = isClicked ? variantClassMap["hard-drive-icon-clicked"] : variantClassMap["hard-drive-icon"];
+            break;
+        default:
+            return null;
+    }
 
     const handleClick = () => {
         setIsClicked(!isClicked);

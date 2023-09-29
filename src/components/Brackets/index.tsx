@@ -5,7 +5,7 @@ import { StyledVerticalBreak } from "../Navbar/navbarStyles";
 import { StyledBracketsContainer, StyledBracketsIcons, StyledPublicWrapper, StyledBracketsAndIconsWrapper, StyledIconsAndMenuWrapper } from "./BracketsStyles";
 import Icon from "../Icon";
 import GlobeIcon from "../../assets/images/icons/SomeShapeIcon.png";
-import HardIcon from "../../assets/images/icons/HardShapeIcon.png";
+import HardDriveIcon from "../../assets/images/icons/HardDriveIcon.png";
 import UsersIcons from "../../assets/images/icons/Users.png";
 
 const Brackets: React.FC = () => {
@@ -22,7 +22,7 @@ const Brackets: React.FC = () => {
 
                     <StyledPublicWrapper>
                         <Icon 
-                            variant="brackets-icon"
+                            variant="globe-icon"
                             alt="globe icon"
                             src={GlobeIcon}
                         />
@@ -33,16 +33,16 @@ const Brackets: React.FC = () => {
                     
                     <StyledVerticalBreak />
                     <Icon 
-                        variant="brackets-icon"
+                        variant="hard-drive-icon"
                         alt="hard icon"
-                        src={HardIcon}
+                        src={HardDriveIcon}
                     />
                 </StyledBracketsIcons>
             </StyledBracketsAndIconsWrapper>
             
             <StyledIconsAndMenuWrapper>
                 <Icon 
-                    variant="brackets-icon"
+                    variant="globe-icon"
                     alt="users icons"
                     src={UsersIcons}
                 />
