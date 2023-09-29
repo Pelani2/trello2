@@ -1,31 +1,36 @@
-import React from "react";
-import { StyledBracketsIcon } from "./IconStyles";
+import React, { useState } from "react";
+import { StyledBracketsIcon, StyledBracketsIconClicked } from "./IconStyles";
 
-const variantClassMap: Record<string, string> = {
-    "brackets-icon": "brackets-icon",
+const variantClassMap: Record<string, any> = {
+    "brackets-icon": StyledBracketsIcon,
+    "brackets-icon-clicked": StyledBracketsIconClicked,
 };
 
 interface IconProps {
     variant: keyof typeof variantClassMap;
     src: string;
     alt?: string;
+    onClick?: () => void;
 }
 
 
-const Icon: React.FC<IconProps> = ({ variant, src, alt }) => {
-    let StyledIcon;
+const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick }) => {
+    const [isClicked, setIsClicked] = useState(false);
 
-    switch(variant) {
-        case "brackets-icon":
-            StyledIcon = StyledBracketsIcon;
-            break;
-        default:
-            return null;
-    }
+    const StyledIcon = isClicked ? variantClassMap[`${variant}-clicked`] : variantClassMap[variant];
+
+    const handleClick = () => {
+        setIsClicked(!isClicked);
+        if (onClick) {
+            onClick();
+        }
+    };
+
     return (
         <StyledIcon 
             src={src}
             alt={alt}
+            onClick={handleClick}
         />
     );
 };
