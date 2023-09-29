@@ -75,3 +75,10 @@ export const StyledNotificationText = styled.div`
     border-radius: 5px;
     box-shadow: 0px 10px 10px rgba(0, 0, 0, 0.1);
 `;
+
+export const StyledBracketText = styled.div`
+    font-size: 1.7rem;
+    color: #333;
+    line-height: 1.6;
+    letter-spacing: 0.05em;
+`;

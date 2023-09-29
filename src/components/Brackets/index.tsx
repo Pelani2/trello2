@@ -12,7 +12,7 @@ const Brackets: React.FC = () => {
     return (
         <StyledBracketsContainer>
             <StyledBracketsAndIconsWrapper>
-                <Typography variant="navbar-text">
+                <Typography variant="bracket-text">
                     Brackets
                 </Typography>
 
@@ -26,7 +26,7 @@ const Brackets: React.FC = () => {
                             alt="globe icon"
                             src={GlobeIcon}
                         />
-                        <Typography variant="navbar-text">
+                        <Typography variant="bracket-text">
                             Public
                         </Typography>
                     </StyledPublicWrapper>
@@ -46,7 +46,7 @@ const Brackets: React.FC = () => {
                     alt="users icons"
                     src={UsersIcons}
                 />
-                <Typography variant="navbar-text">
+                <Typography variant="bracket-text">
                     Menu
                 </Typography>
             </StyledIconsAndMenuWrapper>
