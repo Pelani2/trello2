@@ -6,7 +6,6 @@ import { StyledBracketsContainer, StyledBracketsIcons, StyledPublicWrapper, Styl
 import Icon from "../Icon";
 import GlobeIcon from "../../assets/images/icons/SomeShapeIcon.png";
 import HardDriveIcon from "../../assets/images/icons/HardDriveIcon.png";
-import UsersIcons from "../../assets/images/icons/Users.png";
 
 const Brackets: React.FC = () => {
     return (
@@ -41,11 +40,7 @@ const Brackets: React.FC = () => {
             </StyledBracketsAndIconsWrapper>
             
             <StyledIconsAndMenuWrapper>
-                <Icon 
-                    variant="globe-icon"
-                    alt="users icons"
-                    src={UsersIcons}
-                />
+                
                 <Typography variant="bracket-text">
                     Menu
                 </Typography>

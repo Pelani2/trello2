@@ -24,7 +24,6 @@ export const StyledHardDriveIconClicked = styled.img`
     height: 25px;
     filter: invert(75%) sepia(100%) saturate(3463%) hue-rotate(9deg) brightness(90%) contrast(110%);
 
-
     &:hover {
         cursor: pointer;
     }
