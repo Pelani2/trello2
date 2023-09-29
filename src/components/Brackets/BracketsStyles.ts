@@ -31,5 +31,20 @@ export const StyledIconsAndMenuWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 300px;
+    width: 450px;
+`;
+
+export const StyledUserIconWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    & > * {
+        margin-right: -20px;
+    }
+
+    & > :last-child {
+        margin-right: 0;
+    }
 `;

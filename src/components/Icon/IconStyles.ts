@@ -28,3 +28,8 @@ export const StyledHardDriveIconClicked = styled.img`
         cursor: pointer;
     }
 `;
+
+export const StyledUserIcon = styled.img`
+    width: 50px;
+    height: 50px;
+`;

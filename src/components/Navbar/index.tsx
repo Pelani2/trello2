@@ -7,7 +7,7 @@ import StatsIcon from "../../assets/images/icons/TrelloStatIcon.png";
 import SearchBar from "../SearchBar";
 import NavbarIcon from "../NavbarIcon";
 import ProfileIcon from "../ProfileIcon";
-import FaceIcon from "../../assets/images/icons/ProfileIcon.png";
+import UserIcon from "../../assets/images/icons/users/user.png";
 
 const Navbar: React.FC = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -64,7 +64,7 @@ const Navbar: React.FC = () => {
                     variant="bell" 
                 />
                 <ProfileIcon 
-                    src={FaceIcon}
+                    src={UserIcon}
                     alt="profile icon"
                     variant="navbar-profile-icon"
                 />
