@@ -10,7 +10,13 @@ const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ open }) => {
     return (
         <StyledProfileDropdown open={open}>
             <Typography variant="profile-options-text">
-                Profile
+                View Profile
+            </Typography>
+            <Typography variant="profile-options-text">
+                Edit Profile
+            </Typography>
+            <Typography variant="profile-options-text">
+                Help
             </Typography>
             <Typography variant="profile-options-text">
                 Settings
