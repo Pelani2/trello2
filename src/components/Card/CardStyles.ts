@@ -17,3 +17,9 @@ export const StyledCardTitleWrapper = styled.div`
     border-radius: 20px;
     padding: 10px;
 `;
+
+export const StyledCardContentWrapper = styled.div`
+    border: 1px solid black;
+    width: 100%;
+    display: flex;
+`;
