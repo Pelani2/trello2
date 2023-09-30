@@ -1,10 +1,5 @@
 import styled from "styled-components";
 
-export const StyledDefault = styled.div`
-    font-size: 16px;
-    color: white;
-`;
-
 export const StyledPrimaryTitle = styled.div`
     font-size: 36px;
     font-weight: bold;
@@ -94,5 +89,19 @@ export const StyledProfileOptionsText = styled.div`
 
     &:hover {
         color: lime;
+    }
+`;
+
+export const StyledCardTitle = styled.div`
+    color: white;
+    text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black;
+    font-family: "Courier New", monospace;
+    font-size: 32px;
+    font-weight: bold;
+    perspective: 500px;
+    transition: transform 0.3s;
+
+    &:hover {
+        transform: rotateY(180deg);
     }
 `;

@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledPrimaryTitle, StyledErrorMessge, StyledSuccessMessage, StyledLoginPrompt, StyledPassValidationMesasges, StyledSubTitle, StyledNavbarText, StyledNotificationText, StyledBracketText, StyledProfileOptionsText } from "./typographyStyles";
+import { StyledPrimaryTitle, StyledErrorMessge, StyledSuccessMessage, StyledLoginPrompt, StyledPassValidationMesasges, StyledSubTitle, StyledNavbarText, StyledNotificationText, StyledBracketText, StyledProfileOptionsText, StyledCardTitle } from "./typographyStyles";
 
 const variantClassMap:  Record<string, string> = {
     "primary-title": "primary-title",
@@ -12,6 +12,7 @@ const variantClassMap:  Record<string, string> = {
     "notification-text": "notification-text",
     "bracket-text": "bracket-text",
     "profile-options-text": "profile-options-text",
+    "card-title": "card-title",
 };
 
 interface TypographyProps {
@@ -53,6 +54,9 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => 
             break;
         case 'profile-options-text':
             StyledTypography = StyledProfileOptionsText;
+            break;
+        case 'card-title':
+            StyledTypography = StyledCardTitle;
             break;
         default:
             return null;

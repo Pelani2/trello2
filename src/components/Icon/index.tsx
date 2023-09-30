@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { StyledBracketIcon, StyledGlobeIconClicked, StyledHardDriveIconClicked, StyledUserIcon, StyledHeart } from "./IconStyles";
+import { StyledBracketIcon, StyledGlobeIconClicked, StyledHardDriveIconClicked, StyledUserIcon, StyledHeart, StyledMeatballsIcon } from "./IconStyles";
 
 const variantClassMap: Record<string, any> = {
     "globe-icon": StyledBracketIcon,
@@ -8,6 +8,7 @@ const variantClassMap: Record<string, any> = {
     "hard-drive-icon-clicked": StyledHardDriveIconClicked,
     "user-icon": StyledUserIcon,
     "heart-icon": StyledHeart,
+    "meatballs-icon": StyledMeatballsIcon,
 };
 
 interface IconProps {
@@ -35,6 +36,9 @@ const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick }) => {
             break;
         case "heart-icon":
             StyledIcon = StyledHeart;
+            break;
+        case "meatballs-icon":
+            StyledIcon = StyledMeatballsIcon;
             break;
         default:
             return null;

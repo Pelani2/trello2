@@ -41,3 +41,8 @@ export const StyledHeart = styled(AiFillHeart)<{color: string}>`
     width: 25px;
     height: 25px;
 `;
+
+export const StyledMeatballsIcon = styled.img`
+    width: 24px;
+    height: 6px;
+`;
