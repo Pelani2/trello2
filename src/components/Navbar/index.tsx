@@ -8,6 +8,7 @@ import SearchBar from "../SearchBar";
 import NavbarIcon from "../NavbarIcon";
 import ProfileIcon from "../ProfileIcon";
 import UserIcon from "../../assets/images/icons/users/user.png";
+import ProfileDropdown from "../ProfileDropdown";
 
 const Navbar: React.FC = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -67,7 +68,10 @@ const Navbar: React.FC = () => {
                     src={UserIcon}
                     alt="profile icon"
                     variant="navbar-profile-icon"
+                    isOpened={openDropdown === "profile"}
+                    handleClick={() => handleIconClick("profile")}
                 />
+                {openDropdown === "profile" && <ProfileDropdown />}
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );

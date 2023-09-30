@@ -9,9 +9,11 @@ interface PorfileIconProps {
     variant: keyof typeof variantClassMap;
     src: string;
     alt?: string;
+    isOpened?: boolean;
+    handleClick?: () => void;
 }
 
-const ProfileIcon: React.FC<PorfileIconProps> = ({ variant, src, alt }) => {
+const ProfileIcon: React.FC<PorfileIconProps> = ({ variant, src, alt, isOpened, handleClick }) => {
     let StyledProfileIcon;
 
     switch(variant) {
@@ -26,6 +28,8 @@ const ProfileIcon: React.FC<PorfileIconProps> = ({ variant, src, alt }) => {
         <StyledProfileIcon 
             src={src}
             alt={alt}
+            isOpened={isOpened}
+            onClick={handleClick}
         />
     );
 };
