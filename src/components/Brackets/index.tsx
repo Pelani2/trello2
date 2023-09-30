@@ -23,7 +23,10 @@ const Brackets: React.FC = () => {
                 </Typography>
 
                 <StyledBracketsIcons>
-                    <HeartIcon />
+                    <Icon 
+                        variant="heart-icon"
+                        alt="heart icon"
+                    />
                     <StyledVerticalBreak />
 
                     <StyledPublicWrapper>

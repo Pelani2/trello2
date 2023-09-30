@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { AiFillHeart } from "react-icons/ai";
 
 export const StyledBracketIcon = styled.img`
     width: 25px;
@@ -32,4 +33,11 @@ export const StyledHardDriveIconClicked = styled.img`
 export const StyledUserIcon = styled.img`
     width: 50px;
     height: 50px;
+`;
+
+export const StyledHeart = styled(AiFillHeart)<{color: string}>`
+    color: ${props => props.color};
+    cursor: pointer;
+    width: 25px;
+    height: 25px;
 `;
