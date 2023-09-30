@@ -2,9 +2,13 @@ import React from "react";
 import { StyledProfileDropdown } from "./ProfileDropdownStyles";
 import Typography from "../Typography";
 
-const ProfileDropdown: React.FC = () => {
+interface ProfileDropdownProps {
+    open: boolean;
+}
+
+const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ open }) => {
     return (
-        <StyledProfileDropdown>
+        <StyledProfileDropdown open={open}>
             <p>
                 Profile
             </p>

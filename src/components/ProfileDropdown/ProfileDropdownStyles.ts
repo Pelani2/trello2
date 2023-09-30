@@ -1,11 +1,24 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
-export const StyledProfileDropdown = styled.div`
+interface DropdownProps {
+    open?: boolean;
+}
+
+export const StyledProfileDropdown = styled.div<DropdownProps>`
     position: absolute;
-    right: 10px;
-    top: 80px;
-    background-color: black;
-    border: 1px solid #ddd;
+    right: 0;
+    top: 100%;
+    color: black;
     width: 200px;
-    z-index: 1000;
+    background-color: red;
+    transform: translateY(- 100%); // Initial state
+    opacity: 0; // Initial state
+    pointer-events: none;
+    transition: transform 0.5s ease-in-out, opacity 0.5s ease-in-out;
+
+    ${props => props.open && css`
+        transform: translateY(0); // Final state
+        opacity: 1; // Final state
+        pointer-events: auto;
+    `}
 `;

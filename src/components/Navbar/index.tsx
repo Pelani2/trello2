@@ -71,7 +71,8 @@ const Navbar: React.FC = () => {
                     isOpened={openDropdown === "profile"}
                     handleClick={() => handleIconClick("profile")}
                 />
-                {openDropdown === "profile" && <ProfileDropdown />}
+                {openDropdown === "profile" && <ProfileDropdown 
+                open={openDropdown === "profile"} />}
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );
