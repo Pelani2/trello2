@@ -1,7 +1,6 @@
 import React from "react";
-import { StyledProfileDropdown } from "./ProfileDropdownStyles";
+import { StyledProfileDropdown, StyledProfileLogoutLink } from "./ProfileDropdownStyles";
 import Typography from "../Typography";
-import { Link } from "react-router-dom";
 
 interface ProfileDropdownProps {
     open: boolean;
@@ -10,15 +9,15 @@ interface ProfileDropdownProps {
 const ProfileDropdown: React.FC<ProfileDropdownProps> = ({ open }) => {
     return (
         <StyledProfileDropdown open={open}>
-            <Typography variant="">
+            <Typography variant="profile-options-text">
                 Profile
             </Typography>
-            <Typography variant="">
+            <Typography variant="profile-options-text">
                 Settings
             </Typography>
-            <Link to="/login">
+            <StyledProfileLogoutLink to="/login">
                 Logout
-            </Link>
+            </StyledProfileLogoutLink>
         </StyledProfileDropdown>
     );
 };

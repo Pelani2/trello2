@@ -82,3 +82,17 @@ export const StyledBracketText = styled.div`
     line-height: 1.6;
     letter-spacing: 0.05em;
 `;
+
+export const StyledProfileOptionsText = styled.div`
+    position: relative;
+    z-index: 1;
+    color: white;
+    font-family: "Courier New", monospace;
+    font-size: 16px;
+    margin: 10px;
+    cursor: pointer;
+
+    &:hover {
+        color: lime;
+    }
+`;
