@@ -12,7 +12,7 @@ import UserIcon from "../../assets/images/icons/users/user.png";
 const Navbar: React.FC = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
 
-    const  handleIconClick = (iconName: string) => {
+    const handleIconClick = (iconName: string) => {
         setOpenDropdown(openDropdown === iconName ? null : iconName);
     }
     
