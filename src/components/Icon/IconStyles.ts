@@ -4,6 +4,8 @@ import { AiFillMessage } from "react-icons/ai";
 
 interface IconProps {
     small?: boolean;
+    colorScheme?: "whiteRed" | "blackRed";
+    isClicked?: boolean;
 }
 
 export const StyledBracketIcon = styled.img`
@@ -40,8 +42,16 @@ export const StyledUserIcon = styled.img<IconProps>`
     height: ${(props) => (props.small ? '30px' : '50px')};
 `;
 
-export const StyledHeart = styled(AiFillHeart)<{color: string}>`
-    color: ${props => props.color};
+export const StyledHeart = styled(AiFillHeart)<IconProps>`
+    color: ${props => {
+        if (props.colorScheme === "whiteRed") {
+            return props.isClicked ? "red" : "white";
+        } else if (props.colorScheme === "blackRed") {
+            return props.isClicked ? "red" : "black";
+        } else {
+            return "black";
+        }
+    }};
     cursor: pointer;
     width: 25px;
     height: 25px;

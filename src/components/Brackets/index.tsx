@@ -24,7 +24,7 @@ const Brackets: React.FC = () => {
                 <StyledBracketsIcons>
                     <Icon 
                         variant="heart-icon"
-                        alt="heart icon"
+                        colorScheme="blackRed"
                     />
                     <StyledVerticalBreak />
 

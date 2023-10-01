@@ -8,7 +8,7 @@ import { ColoredRectangle } from "../ColoredRectangle";
 import UserIcon from "../../assets/images/icons/users/user5.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
 
-const Card:  React.FC = () => {
+const Card: React.FC = () => {
     return (
         <StyledCard>
             <StyledCardTitleWrapper>
@@ -58,10 +58,11 @@ const Card:  React.FC = () => {
                                 variant="card-body-text" 
                                 smallFont
                             >
-                                34
+                                14
                             </Typography>
                             <Icon 
-                                variant='message-box-icon'
+                                variant='heart-icon'
+                                colorScheme="whiteRed"
                                 small
                             />
                         </StyledCardIconAndText>

@@ -18,10 +18,11 @@ interface IconProps {
     alt?: string;
     onClick?: () => void;
     small?: boolean;
+    colorScheme?: string;
 }
 
 
-const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small }) => {
+const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small, colorScheme }) => {
     const [isClicked, setIsClicked] = useState(false);
 
     let StyledIcon;
@@ -61,8 +62,9 @@ const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small }) => {
             src={src}
             alt={alt}
             onClick={handleClick}
-            color={variant === "heart-icon" ? (isClicked ? "red" : "black") : undefined}
             small={small}
+            colorScheme={colorScheme}
+            isClicked={isClicked}
         />
     );
 };
