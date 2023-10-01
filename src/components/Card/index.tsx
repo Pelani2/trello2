@@ -2,12 +2,11 @@ import React from "react";
 import Typography from "../Typography";
 import Icon from "../Icon";
 import MeatballsIcon from "../../assets/images/icons/Meatballs.png";
-import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper } from "./CardStyles";
+import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup } from "./CardStyles";
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
 import UserIcon from "../../assets/images/icons/users/user5.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
-import MessageBoxIcon from "../../assets/images/icons/MessageBoxIcon.png";
 
 const Card:  React.FC = () => {
     return (
@@ -41,18 +40,45 @@ const Card:  React.FC = () => {
                             small
                         />
                     </StyledUserIconWrapper>
-                    <div>
-                        <Typography 
-                            variant="card-body-text" 
-                            smallFont
-                        >
-                            34
-                        </Typography>
-                        <Icon 
-                            variant='message-box-icon'
-                            small
-                        />
-                    </div>
+                    <StyledIconAndTextGroup>
+                        <StyledCardIconAndText>
+                            <Typography 
+                                variant="card-body-text" 
+                                smallFont
+                            >
+                                34
+                            </Typography>
+                            <Icon 
+                                variant='message-box-icon'
+                                small
+                            />
+                        </StyledCardIconAndText>
+                        <StyledCardIconAndText>
+                            <Typography 
+                                variant="card-body-text" 
+                                smallFont
+                            >
+                                34
+                            </Typography>
+                            <Icon 
+                                variant='message-box-icon'
+                                small
+                            />
+                        </StyledCardIconAndText>
+                        <StyledCardIconAndText>
+                            <Typography 
+                                variant="card-body-text" 
+                                smallFont
+                            >
+                                34
+                            </Typography>
+                            <Icon 
+                                variant='message-box-icon'
+                                small
+                            />
+                        </StyledCardIconAndText>
+                    </StyledIconAndTextGroup>
+                    
                 </StyledCardStatWrapper>
             </StyledCardContentWrapper>
         </StyledCard>

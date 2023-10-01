@@ -35,4 +35,18 @@ export const StyledCardStatWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    padding: 5px;
+`;
+
+export const StyledCardIconAndText = styled.div`
+    display: flex;
+    align-items: center;
+    gap: 5px;
+`;
+
+export const StyledIconAndTextGroup = styled.div`
+    border: 1px solid white;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 `;
