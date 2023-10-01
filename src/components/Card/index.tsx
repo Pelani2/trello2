@@ -17,12 +17,12 @@ interface CardProps {
     attachmentCount: number;
 }
 
-const Card: React.FC = () => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCount, heartColorScheme, attachmentCount }) => {
     return (
         <StyledCard>
             <StyledCardTitleWrapper>
                 <Typography variant="card-title">
-                    Design
+                    {title}
                 </Typography>
                 <Icon 
                     variant="meatballs-icon"
@@ -33,21 +33,19 @@ const Card: React.FC = () => {
             <StyledCardContentWrapper>
                 <ColoredRectangle variant="yellow" />
                 <Typography variant="card-body-text">
-                    Old fashioned recipe for preventing allergies and chemical sensitivities.
+                    {bodyText}
                 </Typography>
 
                 <StyledCardStatWrapper>
                     <StyledUserIconWrapper smallMargin>
-                        <Icon 
-                            variant="user-icon"
-                            src={UserIcon}
-                            small
-                        />
-                        <Icon 
-                            variant="user-icon"
-                            src={OvalPlusIcon}
-                            small
-                        />
+                        {[...Array(userIconCount)].map((_, i) => (
+                            <Icon 
+                                key={i}
+                                variant="user-icon"
+                                src={UserIcon}
+                                small
+                            />
+                        ))}
                     </StyledUserIconWrapper>
                     <StyledIconAndTextGroup>
                         <StyledCardIconAndText>
