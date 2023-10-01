@@ -31,7 +31,6 @@ export const StyledCardContentWrapper = styled.div`
 `;
 
 export const StyledCardStatWrapper = styled.div`
-    border: 1px solid black;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -45,7 +44,6 @@ export const StyledCardIconAndText = styled.div`
 `;
 
 export const StyledIconAndTextGroup = styled.div`
-    border: 1px solid white;
     display: flex;
     align-items: center;
     gap: 10px;

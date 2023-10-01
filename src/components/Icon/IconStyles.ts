@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { AiFillHeart } from "react-icons/ai";
 import { AiFillMessage } from "react-icons/ai";
+import { AiOutlinePaperClip } from 'react-icons/ai';
 
 interface IconProps {
     small?: boolean;
@@ -53,8 +54,8 @@ export const StyledHeart = styled(AiFillHeart)<IconProps>`
         }
     }};
     cursor: pointer;
-    width: 25px;
-    height: 25px;
+    width: ${(props) => (props.small ? '20px' : '30px')};
+    height: ${(props) => (props.small ? '20px' : '30px')};
 `;
 
 export const StyledMeatballsIcon = styled.img`
@@ -63,6 +64,12 @@ export const StyledMeatballsIcon = styled.img`
 `;
 
 export const StyledMessageBoxIcon = styled(AiFillMessage)<IconProps>`
+    width: ${(props) => (props.small ? '20px' : '50px')};
+    height: ${(props) => (props.small ? '20px' : '50px')};
+    color: white;
+`;
+
+export const StyledAttachmentIcon = styled(AiOutlinePaperClip)<IconProps>`
     width: ${(props) => (props.small ? '20px' : '50px')};
     height: ${(props) => (props.small ? '20px' : '50px')};
     color: white;

@@ -74,7 +74,7 @@ const Card: React.FC = () => {
                                 34
                             </Typography>
                             <Icon 
-                                variant='message-box-icon'
+                                variant='attachment-icon'
                                 small
                             />
                         </StyledCardIconAndText>
