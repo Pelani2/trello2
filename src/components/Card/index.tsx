@@ -42,12 +42,15 @@ const Card:  React.FC = () => {
                         />
                     </StyledUserIconWrapper>
                     <div>
-                        <Typography variant="">
+                        <Typography 
+                            variant="card-body-text" 
+                            smallFont
+                        >
                             34
                         </Typography>
                         <Icon 
-                            variant=""
-                            src={MessageBoxIcon}
+                            variant='message-box-icon'
+                            small
                         />
                     </div>
                 </StyledCardStatWrapper>

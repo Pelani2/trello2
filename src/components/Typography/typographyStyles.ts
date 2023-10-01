@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface TextProps {
+    smallFont?: boolean;
+}
+
 export const StyledPrimaryTitle = styled.div`
     font-size: 36px;
     font-weight: bold;
@@ -105,9 +109,9 @@ export const StyledCardTitle = styled.div`
     }
 `;
 
-export const StyledCardBodyText = styled.div`
+export const StyledCardBodyText = styled.div<TextProps>`
     color: white;
     text-shadow: 0 0 2px black, 0 0 4px black, 0 0 6px black, 0 0 8px black;
-    font-size: 16px;
+    font-size: ${(props) => (props.smallFont ? '12px' : '16px')};
     font-weight: normal;
 `;

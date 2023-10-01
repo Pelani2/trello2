@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { AiFillHeart } from "react-icons/ai";
+import { AiFillMessage } from "react-icons/ai";
 
 interface IconProps {
     small?: boolean;
@@ -49,4 +50,10 @@ export const StyledHeart = styled(AiFillHeart)<{color: string}>`
 export const StyledMeatballsIcon = styled.img`
     width: 24px;
     height: 6px;
+`;
+
+export const StyledMessageBoxIcon = styled(AiFillMessage)<IconProps>`
+    width: ${(props) => (props.small ? '20px' : '50px')};
+    height: ${(props) => (props.small ? '20px' : '50px')};
+    color: white;
 `;

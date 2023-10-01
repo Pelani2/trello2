@@ -20,9 +20,10 @@ interface TypographyProps {
     variant: keyof typeof variantClassMap;
     children: React.ReactNode;
     style?: React.CSSProperties;
+    smallFont?: boolean;
 }
 
-const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => {
+const Typography: React.FC<TypographyProps> = ({ variant, children, style, smallFont }) => {
     let StyledTypography;
 
     switch(variant) {
@@ -67,7 +68,10 @@ const Typography: React.FC<TypographyProps> = ({ variant, children, style }) => 
     }
 
     return (
-        <StyledTypography style={style}>
+        <StyledTypography 
+            style={style}
+            smallFont={smallFont}
+        >
             {children}
         </StyledTypography>
     );
