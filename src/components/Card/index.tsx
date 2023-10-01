@@ -5,19 +5,18 @@ import MeatballsIcon from "../../assets/images/icons/Meatballs.png";
 import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup } from "./CardStyles";
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
-import UserIcon from "../../assets/images/icons/users/user5.png";
-import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
+
 
 interface CardProps {
     title: string;
     bodyText: string;
-    userIconCount: number;
+    userIconSources: string[];
     messageCount: number;
     heartColorScheme: "whiteRed" | "blackRed";
     attachmentCount: number;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCount, heartColorScheme, attachmentCount }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount }) => {
     return (
         <StyledCard>
             <StyledCardTitleWrapper>
@@ -38,11 +37,11 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
 
                 <StyledCardStatWrapper>
                     <StyledUserIconWrapper smallMargin>
-                        {[...Array(userIconCount)].map((_, i) => (
+                        {userIconSources.map((src, i) => (
                             <Icon 
                                 key={i}
                                 variant="user-icon"
-                                src={UserIcon}
+                                src={src}
                                 small
                             />
                         ))}
@@ -69,7 +68,7 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
                             </Typography>
                             <Icon 
                                 variant='heart-icon'
-                                colorScheme="whiteRed"
+                                colorScheme={heartColorScheme}
                                 small
                             />
                         </StyledCardIconAndText>
