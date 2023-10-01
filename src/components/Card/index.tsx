@@ -8,6 +8,15 @@ import { ColoredRectangle } from "../ColoredRectangle";
 import UserIcon from "../../assets/images/icons/users/user5.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
 
+interface CardProps {
+    title: string;
+    bodyText: string;
+    userIconCount: number;
+    messageCount: number;
+    heartColorScheme: "whiteRed" | "blackRed";
+    attachmentCount: number;
+}
+
 const Card: React.FC = () => {
     return (
         <StyledCard>
