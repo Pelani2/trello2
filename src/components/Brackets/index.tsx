@@ -1,6 +1,5 @@
 import React from "react";
 import Typography from "../Typography";
-import HeartIcon from "../HeartIcon";
 import { StyledVerticalBreak } from "../Navbar/navbarStyles";
 import { StyledBracketsContainer, StyledBracketsIcons, StyledPublicWrapper, StyledBracketsAndIconsWrapper, StyledIconsAndMenuWrapper, StyledUserIconWrapper } from "./BracketsStyles";
 import Icon from "../Icon";

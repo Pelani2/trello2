@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface WrapperProps {
+    smallMargin?: boolean;
+}
+
 export const StyledBracketsContainer = styled.div`
     display: flex;
     justify-content: space-between;
@@ -34,14 +38,14 @@ export const StyledIconsAndMenuWrapper = styled.div`
     width: 450px;
 `;
 
-export const StyledUserIconWrapper = styled.div`
+export const StyledUserIconWrapper = styled.div<WrapperProps>`
     display: flex;
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
 
     & > * {
-        margin-right: -20px;
+        margin-right: ${(props) => (props.smallMargin ? '-12px' : '-20px')};
     }
 
     & > :last-child {
