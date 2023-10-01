@@ -95,7 +95,6 @@ export const StyledProfileOptionsText = styled.div`
 export const StyledCardTitle = styled.div`
     color: white;
     text-shadow: 0 0 5px black, 0 0 10px black, 0 0 15px black, 0 0 20px black;
-    font-family: "Courier New", monospace;
     font-size: 32px;
     font-weight: bold;
     perspective: 500px;
@@ -104,4 +103,11 @@ export const StyledCardTitle = styled.div`
     &:hover {
         transform: rotateY(180deg);
     }
+`;
+
+export const StyledCardBodyText = styled.div`
+    color: white;
+    text-shadow: 0 0 2px black, 0 0 4px black, 0 0 6px black, 0 0 8px black;
+    font-size: 16px;
+    font-weight: normal;
 `;

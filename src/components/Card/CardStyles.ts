@@ -6,6 +6,7 @@ export const StyledCard = styled.div`
     justify-content: center;
     align-items: center;
     width: 360px;
+    margin: 10px;
 `;
 
 export const StyledCardTitleWrapper = styled.div`
@@ -16,10 +17,22 @@ export const StyledCardTitleWrapper = styled.div`
     background-image: linear-gradient(to right, pink, purple, blue);
     border-radius: 20px;
     padding: 10px;
+    margin-bottom: 10px;
 `;
 
 export const StyledCardContentWrapper = styled.div`
-    border: 1px solid black;
     width: 100%;
     display: flex;
+    flex-direction: column;
+    background-image: linear-gradient(to right, pink, purple, blue);
+    border-radius: 20px;
+    padding: 10px;
+    gap: 20px;
+`;
+
+export const StyledCardStatWrapper = styled.div`
+    border: 1px solid black;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
