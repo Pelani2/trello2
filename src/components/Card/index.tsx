@@ -53,7 +53,7 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
                                 variant="card-body-text" 
                                 smallFont
                             >
-                                34
+                                {messageCount}
                             </Typography>
                             <Icon 
                                 variant='message-box-icon'
@@ -65,7 +65,7 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
                                 variant="card-body-text" 
                                 smallFont
                             >
-                                14
+                                {attachmentCount}
                             </Typography>
                             <Icon 
                                 variant='heart-icon'
@@ -78,7 +78,7 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
                                 variant="card-body-text" 
                                 smallFont
                             >
-                                34
+                                {attachmentCount}
                             </Typography>
                             <Icon 
                                 variant='attachment-icon'
@@ -86,7 +86,6 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconCount, messageCoun
                             />
                         </StyledCardIconAndText>
                     </StyledIconAndTextGroup>
-                    
                 </StyledCardStatWrapper>
             </StyledCardContentWrapper>
         </StyledCard>
