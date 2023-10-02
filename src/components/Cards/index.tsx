@@ -14,6 +14,7 @@ const Cards: React.FC = () => {
                 heartColorScheme="whiteRed"
                 attachmentCount={14}
                 rectangleColors={['yellow']}
+                showAdditionalText={false}
             />
             <Card 
                 showTitle={false}
@@ -23,6 +24,7 @@ const Cards: React.FC = () => {
                 heartColorScheme="whiteRed"
                 attachmentCount={14}
                 rectangleColors={['yellow', 'red', 'lightPurple', 'lightGreen']}
+                additionalText="Successful businesses know the importance of building and maintaining good working."
             />
         </div>
     );

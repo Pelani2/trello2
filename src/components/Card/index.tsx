@@ -16,9 +16,11 @@ interface CardProps {
     attachmentCount: number;
     rectangleColors: Color[];
     showTitle?: boolean;
+    additionalText?: string;
+    showAdditionalText?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText }) => {
     return (
         <StyledCard>
             {showTitle && (
@@ -45,6 +47,11 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                 <Typography variant="card-body-text">
                     {bodyText}
                 </Typography>
+                {showAdditionalText && (
+                    <Typography variant="card-sub-text">
+                        {additionalText}
+                    </Typography>
+                )}
 
                 <StyledCardStatWrapper>
                     <StyledUserIconWrapper smallMargin>

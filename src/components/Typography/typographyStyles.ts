@@ -115,3 +115,9 @@ export const StyledCardBodyText = styled.div<TextProps>`
     font-size: ${(props) => (props.smallFont ? '12px' : '16px')};
     font-weight: normal;
 `;
+
+export const StyledCardSubText = styled.div`
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 0.9em;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+`;
