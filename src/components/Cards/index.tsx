@@ -8,10 +8,11 @@ import CardImage1 from "../../assets/images/CardImage1.png";
 import UserIcon from "../../assets/images/icons/users/user.png";
 import UserIcon8 from "../../assets/images/icons/users/user8.png";
 import UserIcon9 from "../../assets/images/icons/users/user9.png";
+import { StyledCardsWrapper } from "./CardsStyles";
 
 const Cards: React.FC = () => {
     return (
-        <div className="card-container">
+        <StyledCardsWrapper>
             <Card 
                 title="Design"
                 bodyText="Old fashioned recipe for preventing allergies and chemical sensitivities."
@@ -45,7 +46,7 @@ const Cards: React.FC = () => {
                 imageSrc={CardImage1}
                 rectangleColors={['lightGreen']}
             />
-        </div>
+        </StyledCardsWrapper>
     );
 };
 

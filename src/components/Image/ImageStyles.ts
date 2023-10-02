@@ -5,5 +5,5 @@ export const StyledImage1 = styled.img`
 `;
 
 export const StyledCardImage = styled.img`
-
+    padding: 5px;
 `;
