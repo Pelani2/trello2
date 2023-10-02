@@ -1,14 +1,9 @@
 import { CardProps } from "../../components/Card";
-import UserIcon31 from "../../assets/images/icons/users/user31.png";
-import UserIcon32 from "../../assets/images/icons/users/user32.png";
 import UserIcon13 from "../../assets/images/icons/users/user13.png";
 import UserIcon12 from "../../assets/images/icons/users/user12.png";
 import UserIcon14 from "../../assets/images/icons/users/user14.png";
 import UserIcon5 from "../../assets/images/icons/users/user5.png";
 import UserIcon6 from "../../assets/images/icons/users/user6.png";
-import UserIcon7 from "../../assets/images/icons/users/user7.png";
-import UserIcon29 from "../../assets/images/icons/users/user29.png";
-import UserIcon30 from "../../assets/images/icons/users/user30.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
 import LipsImage from "../../assets/images/Lips.png";
 
