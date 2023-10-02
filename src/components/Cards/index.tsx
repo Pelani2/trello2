@@ -12,7 +12,8 @@ const Cards: React.FC = () => {
                 userIconSources={[UserIcon, OvalPlusIcon]}
                 messageCount={34}
                 heartColorScheme="whiteRed"
-                attachmentCount={14}
+                likesCount={14}
+                attachmentCount={34}
                 rectangleColors={['yellow']}
                 showAdditionalText={false}
             />
@@ -20,9 +21,10 @@ const Cards: React.FC = () => {
                 showTitle={false}
                 bodyText="Home business advertising ideas."
                 userIconSources={[UserIcon, OvalPlusIcon]}
-                messageCount={34}
+                messageCount={23}
                 heartColorScheme="whiteRed"
-                attachmentCount={14}
+                likesCount={12}
+                attachmentCount={43}
                 rectangleColors={['yellow', 'red', 'lightPurple', 'lightGreen']}
                 additionalText="Successful businesses know the importance of building and maintaining good working."
             />

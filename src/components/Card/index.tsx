@@ -14,13 +14,14 @@ interface CardProps {
     messageCount: number;
     heartColorScheme: "whiteRed" | "blackRed";
     attachmentCount: number;
+    likesCount: number;
     rectangleColors: Color[];
     showTitle?: boolean;
     additionalText?: string;
     showAdditionalText?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText, likesCount }) => {
     return (
         <StyledCard>
             {showTitle && (
@@ -82,7 +83,7 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                                 variant="card-body-text" 
                                 smallFont
                             >
-                                {attachmentCount}
+                                {likesCount}
                             </Typography>
                             <Icon 
                                 variant='heart-icon'
