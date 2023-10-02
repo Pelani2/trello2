@@ -8,7 +8,7 @@ import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
 import { Color } from "../../utils/types";
 
-interface CardProps {
+export interface CardProps {
     title?: string;
     bodyText: string;
     userIconSources: string[];
