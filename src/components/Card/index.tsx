@@ -2,7 +2,7 @@ import React from "react";
 import Typography from "../Typography";
 import Icon from "../Icon";
 import MeatballsIcon from "../../assets/images/icons/Meatballs.png";
-import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup } from "./CardStyles";
+import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup, StyledRectangleWrapper } from "./CardStyles";
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
 
@@ -30,7 +30,10 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
             </StyledCardTitleWrapper>
 
             <StyledCardContentWrapper>
-                <ColoredRectangle variant="yellow" />
+                <StyledRectangleWrapper>
+                    <ColoredRectangle variant="yellow" />
+                    <ColoredRectangle variant="yellow" />
+                </StyledRectangleWrapper>
                 <Typography variant="card-body-text">
                     {bodyText}
                 </Typography>

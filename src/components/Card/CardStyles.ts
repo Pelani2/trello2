@@ -48,3 +48,9 @@ export const StyledIconAndTextGroup = styled.div`
     align-items: center;
     gap: 10px;
 `;
+
+export const StyledRectangleWrapper = styled.div`
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+`;
