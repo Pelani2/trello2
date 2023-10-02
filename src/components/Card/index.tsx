@@ -5,34 +5,42 @@ import MeatballsIcon from "../../assets/images/icons/Meatballs.png";
 import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup, StyledRectangleWrapper } from "./CardStyles";
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
-
+import { Color } from "../../utils/types";
 
 interface CardProps {
-    title: string;
+    title?: string;
     bodyText: string;
     userIconSources: string[];
     messageCount: number;
     heartColorScheme: "whiteRed" | "blackRed";
     attachmentCount: number;
+    rectangleColors: Color[];
+    showTitle?: boolean;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true }) => {
     return (
         <StyledCard>
-            <StyledCardTitleWrapper>
-                <Typography variant="card-title">
-                    {title}
-                </Typography>
-                <Icon 
-                    variant="meatballs-icon"
-                    src={MeatballsIcon}
-                />
-            </StyledCardTitleWrapper>
+            {showTitle && (
+                <StyledCardTitleWrapper>
+                    <Typography variant="card-title">
+                        {title}
+                    </Typography>
+                    <Icon 
+                        variant="meatballs-icon"
+                        src={MeatballsIcon}
+                    />
+                </StyledCardTitleWrapper>
+            )}
 
             <StyledCardContentWrapper>
                 <StyledRectangleWrapper>
-                    <ColoredRectangle variant="yellow" />
-                    <ColoredRectangle variant="yellow" />
+                    {rectangleColors.map((color, i) => (
+                        <ColoredRectangle 
+                            key={i}
+                            variant={color}
+                        />
+                    ))}
                 </StyledRectangleWrapper>
                 <Typography variant="card-body-text">
                     {bodyText}

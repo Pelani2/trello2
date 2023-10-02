@@ -13,6 +13,16 @@ const Cards: React.FC = () => {
                 messageCount={34}
                 heartColorScheme="whiteRed"
                 attachmentCount={14}
+                rectangleColors={['yellow']}
+            />
+            <Card 
+                showTitle={false}
+                bodyText="Home business advertising ideas."
+                userIconSources={[UserIcon, OvalPlusIcon]}
+                messageCount={34}
+                heartColorScheme="whiteRed"
+                attachmentCount={14}
+                rectangleColors={['yellow', 'red', 'lightPurple', 'lightGreen']}
             />
         </div>
     );
