@@ -1,9 +1,13 @@
 import UserIcon10 from "../../assets/images/icons/users/user10.png";
 import UserIcon11 from "../../assets/images/icons/users/user11.png";
 import UserIcon12 from "../../assets/images/icons/users/user12.png";
+import UserIcon13 from "../../assets/images/icons/users/user13.png";
+import UserIcon14 from "../../assets/images/icons/users/user14.png";
+import UserIcon15 from "../../assets/images/icons/users/user15.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
 import { CardProps } from "../../components/Card";
 import CardImage2 from "../../assets/images/SharingADrink.png";
+import CardImage3 from "../../assets/images/CardImage3.png";
 
 export const cardsData2: CardProps[] = [
     {
@@ -27,6 +31,18 @@ export const cardsData2: CardProps[] = [
         messageCount: 76,
         likesCount: 32,
         attachmentCount: 66,
+        heartColorScheme: "whiteRed",
+    },
+    {
+        showTitle: false,
+        imageSrc: CardImage3,
+        rectangleColors: ['green'],
+        bodyText: "How to look up",
+        additionalText: "Are you considering buying a compatible inkjet cartridge for your printer?",
+        userIconSources: [UserIcon13, UserIcon14, UserIcon15, OvalPlusIcon],
+        messageCount: 54,
+        likesCount: 76,
+        attachmentCount: 11,
         heartColorScheme: "whiteRed",
     },
 ];
