@@ -3,11 +3,8 @@ import UserIcon17 from "../../assets/images/icons/users/user17.png";
 import UserIcon18 from "../../assets/images/icons/users/user18.png";
 import UserIcon19 from "../../assets/images/icons/users/user19.png";
 import UserIcon20 from "../../assets/images/icons/users/user20.png";
-import UserIcon15 from "../../assets/images/icons/users/user15.png";
 import OvalPlusIcon from "../../assets/images/icons/users/OvalPlusIcon.png";
 import { CardProps } from "../../components/Card";
-import CardImage2 from "../../assets/images/SharingADrink.png";
-import CardImage3 from "../../assets/images/CardImage3.png";
 import TheEyeImage from "../../assets/images/TheEye.png";
 
 export const cardsData3: CardProps[] = [
