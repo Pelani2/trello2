@@ -1,8 +1,9 @@
 import React from "react";
-import { StyledImage1 } from "./ImageStyles";
+import { StyledImage1, StyledCardImage } from "./ImageStyles";
 
 const variantClassMap: Record<string, any> = {
     "image1": StyledImage1,
+    "card-image": StyledCardImage,
 };
 
 interface ImageProps {
@@ -17,6 +18,9 @@ const Image: React.FC<ImageProps> = ({ variant, src, alt}) => {
     switch (variant) {
         case "image1": 
             StyledImage = StyledImage1;
+            break;
+        case 'card-image':
+            StyledImage = StyledCardImage;
             break;
         default:
             return null;

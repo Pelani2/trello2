@@ -2,6 +2,7 @@ import React from "react";
 import Typography from "../Typography";
 import Icon from "../Icon";
 import MeatballsIcon from "../../assets/images/icons/Meatballs.png";
+import Image from "../Image";
 import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCardStatWrapper, StyledCardIconAndText, StyledIconAndTextGroup, StyledRectangleWrapper } from "./CardStyles";
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
@@ -19,11 +20,13 @@ interface CardProps {
     showTitle?: boolean;
     additionalText?: string;
     showAdditionalText?: boolean;
+    imageSrc?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText, likesCount }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText, likesCount, imageSrc }) => {
     return (
         <StyledCard>
+            
             {showTitle && (
                 <StyledCardTitleWrapper>
                     <Typography variant="card-title">
@@ -37,6 +40,13 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
             )}
 
             <StyledCardContentWrapper>
+                {imageSrc && (
+                    <Image 
+                        src={imageSrc}
+                        alt="card image"
+                        variant="card-image"
+                    />
+                )}
                 <StyledRectangleWrapper>
                     {rectangleColors.map((color, i) => (
                         <ColoredRectangle 
