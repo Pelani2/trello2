@@ -2,7 +2,7 @@ import React from "react";
 import Navbar from "../../components/Navbar";
 import Brackets from "../../components/Brackets";
 import Cards from "../../components/Cards";
-import { StyledHomeCardsWrapper } from "./HomeStyles";
+import { StyledHomeCardsWrapper, StyledHomeContainer } from "./HomeStyles";
 import { cardsData1 } from "../../utils/CardsData/cardsData1";
 import { cardsData2 } from "../../utils/CardsData/cardsData2";
 import { cardsData3 } from "../../utils/CardsData/cardsData3";
@@ -11,7 +11,7 @@ import { cardsData5 } from "../../utils/CardsData/cardsData5";
 
 const Home: React.FC = () => {
     return (
-        <div>
+        <StyledHomeContainer>
             <Navbar />
             <Brackets />
             <StyledHomeCardsWrapper>
@@ -21,7 +21,7 @@ const Home: React.FC = () => {
                 <Cards cardsData={cardsData4}/>
                 <Cards cardsData={cardsData5}/>
             </StyledHomeCardsWrapper>
-        </div>
+        </StyledHomeContainer>
     );
 };
 

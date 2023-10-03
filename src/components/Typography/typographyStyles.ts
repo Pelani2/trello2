@@ -86,13 +86,14 @@ export const StyledProfileOptionsText = styled.div`
     position: relative;
     z-index: 1;
     color: white;
-    font-family: "Courier New", monospace;
     font-size: 16px;
     margin: 10px;
     cursor: pointer;
+    text-shadow: 3px 3px 0 rgba(0,0,0,0.2);
 
     &:hover {
-        color: lime;
+        color: #ff69b4;
+        text-shadow: none;
     }
 `;
 

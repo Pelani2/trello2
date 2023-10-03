@@ -24,10 +24,10 @@ export const StyledProfileDropdown = styled.div<DropdownProps>`
         pointer-events: auto;
     `}
 
-    background-color: black;
-    border: 2px solid lime;
-    border-radius: 10px;
-    box-shadow: 0 0 10px lime;
+    background-image: linear-gradient(to right, pink, purple, blue); 
+    border: 1px solid black; 
+    border-radius: 20px; 
+    box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23); 
     overflow: hidden;
 
     &::before {
@@ -37,7 +37,7 @@ export const StyledProfileDropdown = styled.div<DropdownProps>`
         top: 0;
         width: 100%;
         height: 100%;
-        background-image: linear-gradient(to right, transparent, lime, transparent);
+        background-image: linear-gradient(to right, pink, purple, blue);
         animation: slide 2s infinite;
     }
 
@@ -52,16 +52,15 @@ export const StyledProfileDropdown = styled.div<DropdownProps>`
 `;
 
 export const StyledProfileLogoutLink = styled(Link)`
-    color: lime;
-    text-shadow: 0 0 5px lime, 0 0 10px lime, 0 0 15px lime, 0 0 20px lime;
+    color: white;
+    text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.2);
     animation: pulse 2s infinite;
-    background-color: black;
-    border: 2px solid lime;
-    border-radius: 5px;
+    background-image: linear-gradient(to right, pink, purple, blue);
     padding: 5px 10px;
     cursor: pointer;
     margin-top: 10px;
     text-decoration: none;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.19), 0 6px 6px rgba(0, 0, 0, 0.23);
 
     @keyframes pulse {
         0% {
@@ -73,5 +72,10 @@ export const StyledProfileLogoutLink = styled(Link)`
         100% {
             opacity: 1;
         }
+    }
+
+    &:hover {
+        color: #ff69b4;
+        text-shadow: none;
     }
 `;
