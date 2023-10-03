@@ -44,7 +44,7 @@ const Navbar: React.FC = () => {
                 </StyledStatsAndTextWrapper>
                 
                 <StyledVerticalBreak />
-  
+                
                 <SearchBar onSearch={handleSearch} />
             </StyledNavContentWrapper>
 

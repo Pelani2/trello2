@@ -11,6 +11,7 @@ export const StyledSearchForm = styled.form`
     width: 400px;
     transition: all 0.3 ease-in-out;
 
+
     &:focus-within {
         box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
         border: 2px solid #5f9ea0;
