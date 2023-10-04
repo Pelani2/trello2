@@ -64,6 +64,10 @@ export const StyledSubTitle = styled.div`
 export const StyledNavbarText = styled.div`
     font-size: 18px;
     color: black;
+
+    @media (max-width: 321px) {
+        display: none;
+    }
 `;
 
 export const StyledNotificationText = styled.div`

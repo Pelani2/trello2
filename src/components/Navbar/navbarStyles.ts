@@ -10,8 +10,9 @@ export const StyledNavbarContainer = styled.div`
     transform: perspective(600px);
     transform-origin: center bottom;
 
-    @media (max-width: 320px) {
-        flex-direction: column;
+    @media (max-width: 321px) {
+        width: 321px;
+        flex-direction: row;
     }
 `;
 
@@ -21,8 +22,12 @@ export const StyledNavContentWrapper = styled.div`
     justify-content: space-between;
     gap: 20px;
     
-    @media (max-width: 320px) {
-        flex-direction: column;
+    @media (max-width: 321px) {
+        width: 321px;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+        border: 1px solid black;
     }
 `;
 
@@ -32,9 +37,8 @@ export const StyledVerticalBreak = styled.div`
     background-color: black;
     margin: 0 10px;
 
-    @media (max-width: 320px) {
-        width: 50px;
-        height: 2px;
+    @media (max-width: 321px) {
+        display: none;
     }
 `;
 
@@ -44,7 +48,7 @@ export const StyledStatsAndTextWrapper = styled.div`
     justify-content: center;
     gap: 5px;
 
-    @media (max-width: 320px) {
+    @media (max-width: 321px) {
         flex-direction: column;
         gap: 2px;
     }

@@ -30,6 +30,10 @@ export const StyledSearchBarInput = styled.input`
     &::placeholder {
         color: #999;
     }
+
+    @media (max-width: 321px) {
+        display: none;
+    }
 `;
 
 export const StyledDefaultInput = styled.input`

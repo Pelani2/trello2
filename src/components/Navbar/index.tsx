@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { StyledNavbarContainer, StyledVerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
 import Logo from "../Logo";
 import Typography from "../Typography";
@@ -45,7 +45,10 @@ const Navbar: React.FC = () => {
                 
                 <StyledVerticalBreak />
                 
-                <SearchBar onSearch={handleSearch} />
+                <SearchBar 
+                    onSearch={handleSearch}
+                    variant="Fa"
+                />
             </StyledNavContentWrapper>
 
             <StyledNavContentWrapper>

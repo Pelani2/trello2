@@ -31,6 +31,9 @@ export const StyledSubmitButton = styled.button`
 `;
 
 export const StyledSearchBarButton = styled.button`
+    display: flex;
+    justify-content: center;
+    align-items: center;
     border: none;
     background-color: transparent;
     cursor: pointer;
@@ -38,5 +41,11 @@ export const StyledSearchBarButton = styled.button`
     svg {
         font-size: 20px;
         color: #333;
+    }
+
+    @media (max-width: 321px) {
+        svg {
+            font-size: 15px;
+        }
     }
 `;
