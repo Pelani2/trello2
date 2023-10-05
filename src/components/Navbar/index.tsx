@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { StyledNavbarContainer, StyledVerticalBreak, StyledNavContentWrapper, StyledStatsAndTextWrapper } from "./navbarStyles";
 import Logo from "../Logo";
 import Typography from "../Typography";
@@ -8,7 +8,6 @@ import SearchBar from "../SearchBar";
 import NavbarIcon from "../NavbarIcon";
 import ProfileIcon from "../ProfileIcon";
 import UserIcon from "../../assets/images/icons/users/user.png";
-import ProfileDropdown from "../ProfileDropdown";
 
 const Navbar: React.FC = () => {
     const [openDropdown, setOpenDropdown] = useState<string | null>(null);
@@ -74,8 +73,6 @@ const Navbar: React.FC = () => {
                     isOpened={openDropdown === "profile"}
                     handleClick={() => handleIconClick("profile")}
                 />
-                {openDropdown === "profile" && <ProfileDropdown 
-                open={openDropdown === "profile"} />}
             </StyledNavContentWrapper>
         </StyledNavbarContainer>
     );

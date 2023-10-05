@@ -20,10 +20,6 @@ export const StyledPrimaryLogo = styled.img`
 export const StyledNarbarLogo = styled.img`
     width: 76px;
     height: 30px;
-
-    @media (max-width: 321px) {
-        display: none;
-    }
 `;
 
 export const StyledNavbarStatsIcon = styled.img`

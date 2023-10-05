@@ -12,44 +12,55 @@ import User4 from "../../assets/images/icons/users/user3.png";
 import User5 from "../../assets/images/icons/users/user4.png";
 import Group44 from "../../assets/images/icons/users/group44.png";
 
-
-const Brackets: React.FC = () => {
+const Brackets: React.FC = () => { 
     return (
         <StyledBracketsContainer>
+
             <StyledBracketsAndIconsWrapper>
+
                 <Typography variant="bracket-text">
                     Brackets
                 </Typography>
 
                 <StyledBracketsIcons>
+
                     <Icon 
                         variant="heart-icon"
                         colorScheme="blackRed"
                     />
+
                     <StyledVerticalBreak />
 
                     <StyledPublicWrapper>
+
                         <Icon 
                             variant="globe-icon"
                             alt="globe icon"
                             src={GlobeIcon}
                         />
+
                         <Typography variant="bracket-text">
                             Public
                         </Typography>
+
                     </StyledPublicWrapper>
                     
                     <StyledVerticalBreak />
+
                     <Icon 
                         variant="hard-drive-icon"
                         alt="hard icon"
                         src={HardDriveIcon}
                     />
+
                 </StyledBracketsIcons>
+
             </StyledBracketsAndIconsWrapper>
             
             <StyledIconsAndMenuWrapper>
+
                 <StyledUserIconWrapper>
+
                     <Icon 
                         variant="user-icon"
                         alt="user icon"
@@ -80,11 +91,13 @@ const Brackets: React.FC = () => {
                         alt="user icon"
                         src={Group44}
                     />
+
                 </StyledUserIconWrapper>
                 
                 <Typography variant="bracket-text">
                     Menu
                 </Typography>
+                
             </StyledIconsAndMenuWrapper>
         </StyledBracketsContainer>
     );

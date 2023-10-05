@@ -42,10 +42,4 @@ export const StyledSearchBarButton = styled.button`
         font-size: 20px;
         color: #333;
     }
-
-    @media (max-width: 321px) {
-        svg {
-            font-size: 15px;
-        }
-    }
 `;

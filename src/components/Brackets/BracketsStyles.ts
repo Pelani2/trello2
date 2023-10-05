@@ -29,6 +29,10 @@ export const StyledBracketsAndIconsWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 100px;
+
+    @media (max-width: 321px) {
+        
+    }
 `;
 
 export const StyledIconsAndMenuWrapper = styled.div`
@@ -50,5 +54,9 @@ export const StyledUserIconWrapper = styled.div<WrapperProps>`
 
     & > :last-child {
         margin-right: 0;
+    }
+
+    @media (max-width: 321px) {
+        margin-left: 80px;
     }
 `;
