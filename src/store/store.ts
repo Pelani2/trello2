@@ -5,6 +5,7 @@ import passwordResetReducer from './actions/passwordResetSlice';
 import loginApiReducer from './actions/loginApiSlice';
 import signupApiReducer from './actions/signupApiSlice';
 import randomCodeReducer from './actions/randomCodeSlice';
+import viewPortReducer from './actions/viewPortSlice';
 
 const store = configureStore({
     reducer: {
@@ -14,6 +15,7 @@ const store = configureStore({
         loginApi: loginApiReducer,
         signupApi: signupApiReducer,
         randomCode: randomCodeReducer,
+        viewport: viewPortReducer,
     },
 });
 

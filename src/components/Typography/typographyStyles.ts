@@ -66,7 +66,7 @@ export const StyledNavbarText = styled.div`
     color: black;
 
     @media (max-width: 321px) {
-        display: none;
+        color: white;
     }
 `;
 

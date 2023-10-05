@@ -7,6 +7,11 @@ export const StyledNavbarContainer = styled.div`
     padding: 15px;
     color: #fff;
     box-shadow: 0 10px 20px rgba(0,0,0,0.19), 0 6px 6px rgba(0,0,0,0.23);
+
+    @media (max-width: 321px) {
+        width: 100%;
+        padding: 30px;
+    }
 `;
 
 export const StyledNavContentWrapper = styled.div`
@@ -14,6 +19,11 @@ export const StyledNavContentWrapper = styled.div`
     align-items: center;
     justify-content: space-between;
     gap: 20px;
+
+    @media (max-width: 321px) {
+        justify-content: flex-start;
+        gap: 10px;
+    }
 
 `;
 

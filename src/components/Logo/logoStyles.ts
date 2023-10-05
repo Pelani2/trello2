@@ -17,7 +17,7 @@ export const StyledPrimaryLogo = styled.img`
     }
 `;
 
-export const StyledNarbarLogo = styled.img`
+export const StyledNavbarLogo = styled.img`
     width: 76px;
     height: 30px;
 `;

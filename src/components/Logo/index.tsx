@@ -1,5 +1,5 @@
 import React from "react";
-import { StyledDefaultLogo, StyledPrimaryLogo, StyledNarbarLogo, StyledNavbarStatsIcon } from "./logoStyles";
+import { StyledDefaultLogo, StyledPrimaryLogo, StyledNavbarLogo, StyledNavbarStatsIcon } from "./logoStyles";
 
 const variantClassMap: Record<string, string> = {
     "primary-logo": "primary-logo",
@@ -21,7 +21,7 @@ const Logo: React.FC<LogoProps> = ({ variant, src, alt }) => {
             StyledLogo = StyledPrimaryLogo;
             break;
         case 'navbar-logo':
-            StyledLogo = StyledNarbarLogo;
+            StyledLogo = StyledNavbarLogo;
             break;
         case 'navbar-stats-icon':
             StyledLogo = StyledNavbarStatsIcon;
