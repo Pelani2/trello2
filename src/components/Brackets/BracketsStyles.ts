@@ -42,18 +42,14 @@ export const StyledBracketsAndIconsWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 100px;
-
-    @media (max-width: 321px) {
-        
-    }
+    width: 100%;
 `;
 
 export const StyledIconsAndMenuWrapper = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 450px;
+    gap: 20px;
 `;
 
 export const StyledUserIconWrapper = styled.div<WrapperProps>`

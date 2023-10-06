@@ -1,7 +1,7 @@
 import React from "react";
 import Typography from "../Typography";
 import { StyledVerticalBreak } from "../Navbar/navbarStyles";
-import { StyledBracketsContainer, StyledBracketsIcons, StyledPublicWrapper, StyledBracketsAndIconsWrapper, StyledIconsAndMenuWrapper, StyledUserIconWrapper } from "./BracketsStyles";
+import { StyledBracketsContainer, StyledBracketsIcons, StyledPublicWrapper, StyledBracketsAndIconsWrapper, StyledUserIconWrapper, StyledIconsAndMenuWrapper } from "./BracketsStyles";
 import Icon from "../Icon";
 import GlobeIcon from "../../assets/images/icons/SomeShapeIcon.png";
 import HardDriveIcon from "../../assets/images/icons/HardDriveIcon.png";
@@ -16,7 +16,6 @@ import { RootState } from "../../store/store";
 import { FaHeart } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
 import { FaGoogleDrive } from "react-icons/fa";
-import { StyledUserIcon } from "../Icon/IconStyles";
 
 const Brackets: React.FC = () => { 
     const viewportWidth = useSelector((state: RootState) => state.viewport.width);
@@ -96,64 +95,69 @@ const Brackets: React.FC = () => {
                     </StyledBracketsIcons>
                     </div>
                     {/* layout for > than 321px width */}
-                </div> : <StyledBracketsAndIconsWrapper> 
-                            <Typography variant="bracket-text">
-                                Brackets
-                            </Typography>
-                            <StyledBracketsIcons>
-                                <Icon 
-                                    variant="heart-icon"
-                                    colorScheme="blackRed"
-                                />
-                                <StyledVerticalBreak />
-                                <StyledPublicWrapper>
+                </div> : <StyledBracketsAndIconsWrapper>
+                            <div style={{ display: "flex", alignItems: "center", gap: "100px"}}>
+                                <Typography variant="bracket-text">
+                                    Brackets
+                                </Typography>
+                                <StyledBracketsIcons>
                                     <Icon 
-                                        variant="globe-icon"
-                                        alt="globe icon"
-                                        src={GlobeIcon}
+                                        variant="heart-icon"
+                                        colorScheme="blackRed"
                                     />
-                                    <Typography variant="bracket-text">
-                                        Public
-                                    </Typography>
-                                </StyledPublicWrapper>
-                                <StyledVerticalBreak />
-                                <Icon 
-                                    variant="hard-drive-icon"
-                                    alt="hard icon"
-                                    src={HardDriveIcon}
-                                />
-                            </StyledBracketsIcons>
-                            <StyledUserIconWrapper>
-                                <Icon 
-                                    variant="user-icon"
-                                    src={User1}
-                                />
-                                <Icon 
-                                    variant="user-icon"
-                                    src={User2}
-                                />
-                                <Icon 
-                                    variant="user-icon"
-                                    src={User3}
-                                />
-                                <Icon 
-                                    variant="user-icon"
-                                    src={User4}
-                                />
-                                <Icon 
-                                    variant="user-icon"
-                                    src={User5}
-                                />
-                                <Icon 
-                                    variant="user-icon"
-                                    src={Group44}
-                                />
-                            </StyledUserIconWrapper>
+                                    <StyledVerticalBreak />
+                                    <StyledPublicWrapper>
+                                        <Icon 
+                                            variant="globe-icon"
+                                            alt="globe icon"
+                                            src={GlobeIcon}
+                                        />
+                                        <Typography variant="bracket-text">
+                                            Public
+                                        </Typography>
+                                    </StyledPublicWrapper>
+                                    <StyledVerticalBreak />
+                                    <Icon 
+                                        variant="hard-drive-icon"
+                                        alt="hard icon"
+                                        src={HardDriveIcon}
+                                    />
+                                </StyledBracketsIcons>
+                            </div>
+                            
+                            <StyledIconsAndMenuWrapper>
+                                <StyledUserIconWrapper>
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={User1}
+                                    />
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={User2}
+                                    />
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={User3}
+                                    />
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={User4}
+                                    />
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={User5}
+                                    />
+                                    <Icon 
+                                        variant="user-icon"
+                                        src={Group44}
+                                    />
                                 
+                                </StyledUserIconWrapper>
+                                <Typography variant="bracket-text">
+                                    Menu
+                                </Typography>
+                            </StyledIconsAndMenuWrapper>
                     </StyledBracketsAndIconsWrapper>}
-                    {viewportWidth > 321 ? <Typography variant="bracket-text">
-                        Menu
-                    </Typography> : null}
         </StyledBracketsContainer>
     );
 };
