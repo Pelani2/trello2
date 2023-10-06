@@ -1,5 +1,9 @@
 import styled from "styled-components";
 
+interface NavbarProps {
+    color?: string;
+}
+
 export const StyledNavbarContainer = styled.div`
     display: flex;
     align-items: center;
@@ -30,8 +34,14 @@ export const StyledNavContentWrapper = styled.div`
 export const StyledVerticalBreak = styled.div`
     width: 2px;
     height: 50px;
-    background-color: black;
+    background-color: ${props => props.color || "black"};
     margin: 0 10px;
+    
+    @media (max-width: 321px) {
+        width: 1px;
+        height: 25px;
+        margin: 0;
+    }
 `;
 
 export const StyledStatsAndTextWrapper = styled.div`

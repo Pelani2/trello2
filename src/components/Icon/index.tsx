@@ -20,10 +20,11 @@ interface IconProps {
     onClick?: () => void;
     small?: boolean;
     colorScheme?: string;
+    style?: React.CSSProperties | undefined;
 }
 
 
-const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small, colorScheme }) => {
+const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small, colorScheme, style }) => {
     const [isClicked, setIsClicked] = useState(false);
 
     let StyledIcon;
@@ -69,6 +70,7 @@ const Icon: React.FC<IconProps> = ({ variant, src, alt, onClick, small, colorSch
             small={small}
             colorScheme={colorScheme}
             isClicked={isClicked}
+            style={style}
         />
     );
 };

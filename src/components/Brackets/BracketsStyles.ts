@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface WrapperProps {
     smallMargin?: boolean;
+    respMargin?: boolean;
 }
 
 export const StyledBracketsContainer = styled.div`
@@ -9,6 +10,10 @@ export const StyledBracketsContainer = styled.div`
     justify-content: space-between;
     align-items: center;
     padding: 15px;
+
+    @media (max-width: 321px) {
+        width: 321px;
+    }
 `;
 
 export const StyledBracketsIcons = styled.div`
@@ -16,12 +21,21 @@ export const StyledBracketsIcons = styled.div`
     justify-content: center;
     align-items: center;
     gap: 20px;
+
+    @media (max-width: 321px) {
+        gap: 10px;
+        justify-content: space-between;
+    }
 `;
 
 export const StyledPublicWrapper = styled.div`
     display: flex;
     gap: 5px;
     align-items: center;
+
+    @media (max-width: 321px) {
+        gap: 10px;
+    }
 `;
 
 export const StyledBracketsAndIconsWrapper = styled.div`
@@ -57,6 +71,6 @@ export const StyledUserIconWrapper = styled.div<WrapperProps>`
     }
 
     @media (max-width: 321px) {
-        margin-left: 80px;
+        
     }
 `;

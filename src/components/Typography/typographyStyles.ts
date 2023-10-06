@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 interface TextProps {
     smallFont?: boolean;
+    whiteText?: string;
 }
 
 export const StyledPrimaryTitle = styled.div`
@@ -80,8 +81,8 @@ export const StyledNotificationText = styled.div`
 `;
 
 export const StyledBracketText = styled.div<TextProps>`
-    font-size: 30px;
-    color: #333;
+    font-size: ${props => props.smallFont ? "15px" : "30px"};
+    color: ${props => props.whiteText ? "white" : "#333"};
     line-height: 1.6;
     letter-spacing: 0.05em;
 `;
