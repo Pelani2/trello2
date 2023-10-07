@@ -41,6 +41,11 @@ export const StyledHardDriveIconClicked = styled.img`
 export const StyledUserIcon = styled.img<IconProps>`
     width: ${(props) => (props.small ? '30px' : '50px')};
     height: ${(props) => (props.small ? '30px' : '50px')};
+
+    @media (max-width: 321px) {
+        width: 15px;
+        height: 15px;
+    }
 `;
 
 export const StyledHeart = styled(AiFillHeart)<IconProps>`

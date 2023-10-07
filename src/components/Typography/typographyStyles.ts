@@ -113,6 +113,10 @@ export const StyledCardTitle = styled.div`
     &:hover {
         transform: rotateY(180deg);
     }
+
+    @media (max-width: 321px) {
+        font-size: 12px;
+    }
 `;
 
 export const StyledCardBodyText = styled.div<TextProps>`
@@ -120,10 +124,18 @@ export const StyledCardBodyText = styled.div<TextProps>`
     text-shadow: 0 0 2px black, 0 0 4px black, 0 0 6px black, 0 0 8px black;
     font-size: ${(props) => (props.smallFont ? '12px' : '16px')};
     font-weight: normal;
+
+    @media (max-width: 321px) {
+        font-size: 14px;   
+    }
 `;
 
 export const StyledCardSubText = styled.div`
     color: rgba(255, 255, 255, 0.8);
     font-size: 0.9em;
     text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.6);
+
+    @media (max-width: 321px) {
+        font-size: 12px;   
+    }
 `;

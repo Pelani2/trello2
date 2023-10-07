@@ -7,6 +7,11 @@ export const StyledCard = styled.div`
     align-items: center;
     width: 360px;
     margin: 10px;
+
+    @media (max-width: 321px) {
+        width: 288px;
+        margin: 0 0 10px 0;
+    }
 `;
 
 export const StyledCardTitleWrapper = styled.div`
@@ -18,6 +23,10 @@ export const StyledCardTitleWrapper = styled.div`
     border-radius: 20px;
     padding: 10px;
     margin-bottom: 10px;
+
+    @media (max-width: 321px) {
+        width: 265px;   
+    }
 `;
 
 export const StyledCardContentWrapper = styled.div`
@@ -28,6 +37,10 @@ export const StyledCardContentWrapper = styled.div`
     border-radius: 20px;
     padding: 10px;
     gap: 20px;
+
+    @media (max-width: 321px) {
+        width: 265px;   
+    }
 `;
 
 export const StyledCardStatWrapper = styled.div`

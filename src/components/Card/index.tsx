@@ -7,6 +7,8 @@ import { StyledCard, StyledCardTitleWrapper, StyledCardContentWrapper, StyledCar
 import { StyledUserIconWrapper } from "../Brackets/BracketsStyles";
 import { ColoredRectangle } from "../ColoredRectangle";
 import { Color } from "../../utils/types";
+import { RootState } from "../../store/store";
+import { useSelector } from "react-redux";
 
 export interface CardProps {
     title?: string;
@@ -23,7 +25,9 @@ export interface CardProps {
     imageSrc?: string;
 }
 
-const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, heartColorScheme, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText, likesCount, imageSrc }) => {
+const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCount, attachmentCount, rectangleColors, showTitle = true, showAdditionalText = true, additionalText, likesCount, imageSrc }) => {
+    const viewportWidth = useSelector((state: RootState) => state.viewport.width);
+    
     return (
         <StyledCard>
             
@@ -65,16 +69,28 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                 )}
 
                 <StyledCardStatWrapper>
-                    <StyledUserIconWrapper smallMargin>
-                        {userIconSources.map((src, i) => (
-                            <Icon 
-                                key={i}
-                                variant="user-icon"
-                                src={src}
-                                small
-                            />
-                        ))}
+                    {viewportWidth <= 321 ? (
+                        <StyledUserIconWrapper>
+                            {userIconSources.map((src, i) => (
+                                <Icon 
+                                    key={i}
+                                    variant="user-icon"
+                                    src={src}
+                                    small
+                                />
+                            ))}
                     </StyledUserIconWrapper>
+                    ) : <StyledUserIconWrapper smallMargin>
+                    {userIconSources.map((src, i) => (
+                        <Icon 
+                            key={i}
+                            variant="user-icon"
+                            src={src}
+                            small
+                        />
+                    ))}
+                    </StyledUserIconWrapper>}
+
                     <StyledIconAndTextGroup>
                         <StyledCardIconAndText>
                             <Typography 
@@ -83,10 +99,16 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                             >
                                 {messageCount}
                             </Typography>
-                            <Icon 
-                                variant='message-box-icon'
-                                small
-                            />
+                            {viewportWidth <= 321 ? (
+                                <Icon 
+                                    variant='message-box-icon'
+                                    small
+                                    style={{width: "14px", height: "14px"}}
+                            /   >
+                            ) : <Icon 
+                                    variant='message-box-icon'
+                                    small
+                            />}
                         </StyledCardIconAndText>
                         <StyledCardIconAndText>
                             <Typography 
@@ -95,11 +117,18 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                             >
                                 {likesCount}
                             </Typography>
-                            <Icon 
-                                variant='heart-icon'
-                                colorScheme={heartColorScheme}
-                                small
-                            />
+                            {viewportWidth <= 321 ? (
+                                <Icon 
+                                    variant='heart-icon'
+                                    colorScheme="whiteRed"
+                                    small
+                                    style={{width: "14px", height: "14px"}}
+                            /   >
+                            ) : <Icon 
+                                    variant='heart-icon'
+                                    colorScheme="whiteRed"
+                                    small
+                            />}
                         </StyledCardIconAndText>
                         <StyledCardIconAndText>
                             <Typography 
@@ -108,10 +137,17 @@ const Card: React.FC<CardProps> = ({ title, bodyText, userIconSources, messageCo
                             >
                                 {attachmentCount}
                             </Typography>
-                            <Icon 
-                                variant='attachment-icon'
-                                small
+                            {viewportWidth <= 321 ? (
+                                <Icon 
+                                    variant='attachment-icon'
+                                    small
+                                    style={{width: "14px", height: "14px"}}
                             />
+                            ) : <Icon 
+                                    variant='attachment-icon'
+                                    small
+                            />}
+                            
                         </StyledCardIconAndText>
                     </StyledIconAndTextGroup>
                 </StyledCardStatWrapper>

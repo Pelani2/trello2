@@ -13,7 +13,6 @@ import User5 from "../../assets/images/icons/users/user4.png";
 import Group44 from "../../assets/images/icons/users/group44.png";
 import { useSelector } from "react-redux";
 import { RootState } from "../../store/store";
-import { FaHeart } from "react-icons/fa";
 import { FaGlobe } from "react-icons/fa";
 import { FaGoogleDrive } from "react-icons/fa";
 
@@ -22,22 +21,29 @@ const Brackets: React.FC = () => {
     return (
         <StyledBracketsContainer>
                 {/* layout for 321px width  */}
-                {viewportWidth <= 321 ? <div style={{ display: "flex", flexDirection: "column"}}>
-                    <Typography variant="bracket-text" style={{color: "white", fontSize: "20px"}}>
+                {viewportWidth <= 321 ? <div style={{ 
+                        display: "flex", 
+                        flexDirection: "column"
+                    }}>
+                    <Typography 
+                        variant="bracket-text" 
+                        style={{color: "white", fontSize: "20px"}}
+                    >
                         Brackets
                     </Typography>
                     <div>
                     <StyledBracketsIcons>
                         <StyledPublicWrapper>
-                            <FaHeart 
-                                color="white" 
-                                size={12}
+                            <Icon 
+                                variant="heart-icon"
+                                style={{ width: "12px", height: "12px"}}
+                                colorScheme="whiteRed"
                             />
                             <StyledVerticalBreak color="white"/>
-                            <FaGlobe 
-                                color="white" 
-                                size={12}
-                            />
+                                <FaGlobe 
+                                    color="white" 
+                                    size={12}
+                                />
                             <Typography 
                                 variant="bracket-text" 
                                 style={{fontSize: "15px", color: "white"}}
@@ -96,7 +102,11 @@ const Brackets: React.FC = () => {
                     </div>
                     {/* layout for > than 321px width */}
                 </div> : <StyledBracketsAndIconsWrapper>
-                            <div style={{ display: "flex", alignItems: "center", gap: "100px"}}>
+                            <div style={{ 
+                                    display: "flex", 
+                                    alignItems: "center", 
+                                    gap: "100px"
+                                }}>
                                 <Typography variant="bracket-text">
                                     Brackets
                                 </Typography>
@@ -124,7 +134,6 @@ const Brackets: React.FC = () => {
                                     />
                                 </StyledBracketsIcons>
                             </div>
-                            
                             <StyledIconsAndMenuWrapper>
                                 <StyledUserIconWrapper>
                                     <Icon 
